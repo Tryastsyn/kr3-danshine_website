@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevPath — навигатор по направлениям IT</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Иконки языков программирования (Devicon) -->
+  <link href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css" rel="stylesheet">
+  <!-- Пиксельный шрифт для карточек -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Свои стили подключаем ПОСЛЕ Bootstrap -->
+  <link rel="stylesheet" href="styles/style.css?v=4">
+</head>
+<body id="top" class="d-flex flex-column min-vh-100">
+
+  <!-- ========== МЕНЮ (одинаковое на всех страницах) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold logo" href="index.html">Dev<span class="logo__accent">Path</span></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Открыть меню"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="directions.html">Направления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html">Отзывы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">О проекте</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="how.html">Как это работает</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow-1">
+
+    <!-- ========== БАННЕР ========== -->
+    <section class="hero py-5">
+      <div class="container py-lg-5">
+        <div class="row align-items-center g-4 g-lg-5">
+
+          <div class="col-12 col-lg-6">
+            <span class="badge badge--pink mb-3">Навигатор по IT для новичков</span>
+            <h1 class="display-4 fw-bold">
+              Найди свой <span class="hero__accent">путь в IT</span>
+            </h1>
+            <p class="lead hero__text mb-4 phrase" data-phrases="home">
+              Выбери, что хочешь создавать, — и узнай, какие языки и инструменты
+              учить и в каком порядке.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-red btn-lg" href="directions.html">Выбрать направление</a>
+              <a class="btn btn-outline-light btn-lg" href="how.html">Как это работает</a>
+            </div>
+          </div>
+
+          <!-- Маскот Тьмуша -->
+          <div class="col-12 col-lg-6 text-center hero__visual">
+            <div class="bubble mb-4">
+              Никак не могу найти свой язык программирования…
+              Поможешь выбрать?
+            </div>
+            <div>
+              <img class="mascot" src="images/ada.png" alt="Тьмуша — пиксельный маскот DevPath">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DEVPATH В ЦИФРАХ ========== -->
+    <section class="container py-5">
+      <span class="section-label">В цифрах</span>
+      <h2 class="fw-bold mt-3 mb-4">Что уже есть на DevPath</h2>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="make-card">
+            <p class="intro-title mb-2"><span class="hero__accent count">8</span></p>
+            <p class="make-text">направлений IT</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="make-card">
+            <p class="intro-title mb-2"><span class="hero__accent count">39</span></p>
+            <p class="make-text">языков и инструментов</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="make-card">
+            <p class="intro-title mb-2"><span class="hero__accent">0</span></p>
+            <p class="make-text">рублей: всё бесплатно и без регистрации</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ПРИВЕТ, МИР! (вкладки Bootstrap) ========== -->
+    <section class="container py-5">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-4 mb-4">
+        <div>
+          <span class="section-label">Первая строчка кода</span>
+          <h2 class="fw-bold mt-3 mb-2">Скажи «Привет, мир!»</h2>
+          <p class="directions__text mb-0">С этой программы начинают изучать почти любой язык. Выбери язык и посмотри, как она выглядит.</p>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="bubble bubble--right">Нажми на язык — я покажу, как он здоровается!</div>
+          <img class="mascot mascot--small" src="images/ada.png" alt="">
+        </div>
+      </div>
+
+      <!-- Кнопки-вкладки: data-bs-toggle="pill" переключает блоки ниже -->
+      <div class="nav gap-2 mb-3" role="tablist">
+        <button class="btn btn-outline-pink active" type="button" data-bs-toggle="pill" data-bs-target="#hello-python" role="tab" aria-controls="hello-python" aria-selected="true">Python</button>
+        <button class="btn btn-outline-pink" type="button" data-bs-toggle="pill" data-bs-target="#hello-js" role="tab" aria-controls="hello-js" aria-selected="false">JavaScript</button>
+        <button class="btn btn-outline-pink" type="button" data-bs-toggle="pill" data-bs-target="#hello-csharp" role="tab" aria-controls="hello-csharp" aria-selected="false">C#</button>
+        <button class="btn btn-outline-pink" type="button" data-bs-toggle="pill" data-bs-target="#hello-cpp" role="tab" aria-controls="hello-cpp" aria-selected="false">C++</button>
+        <button class="btn btn-outline-pink" type="button" data-bs-toggle="pill" data-bs-target="#hello-kotlin" role="tab" aria-controls="hello-kotlin" aria-selected="false">Kotlin</button>
+        <button class="btn btn-outline-pink" type="button" data-bs-toggle="pill" data-bs-target="#hello-swift" role="tab" aria-controls="hello-swift" aria-selected="false">Swift</button>
+        <button class="btn btn-outline-pink" type="button" data-bs-toggle="pill" data-bs-target="#hello-go" role="tab" aria-controls="hello-go" aria-selected="false">Go</button>
+        <button class="btn btn-outline-pink" type="button" data-bs-toggle="pill" data-bs-target="#hello-bash" role="tab" aria-controls="hello-bash" aria-selected="false">Bash</button>
+      </div>
+
+      <!-- Содержимое вкладок -->
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="hello-python" role="tabpanel">
+          <pre class="lang-code"><code>print("Привет, мир!")</code></pre>
+          <p class="directions__text mt-2 mb-0">Где пригодится: бэкенд, ИИ, анализ данных, кибербезопасность.</p>
+        </div>
+        <div class="tab-pane fade" id="hello-js" role="tabpanel">
+          <pre class="lang-code"><code>console.log("Привет, мир!");</code></pre>
+          <p class="directions__text mt-2 mb-0">Где пригодится: фронтенд, бэкенд на Node.js.</p>
+        </div>
+        <div class="tab-pane fade" id="hello-csharp" role="tabpanel">
+          <pre class="lang-code"><code>Console.WriteLine("Привет, мир!");</code></pre>
+          <p class="directions__text mt-2 mb-0">Где пригодится: разработка игр на Unity, бэкенд.</p>
+        </div>
+        <div class="tab-pane fade" id="hello-cpp" role="tabpanel">
+          <pre class="lang-code"><code>#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; "Привет, мир!" &lt;&lt; std::endl;
+    return 0;
+}</code></pre>
+          <p class="directions__text mt-2 mb-0">Где пригодится: разработка игр на Unreal Engine.</p>
+        </div>
+        <div class="tab-pane fade" id="hello-kotlin" role="tabpanel">
+          <pre class="lang-code"><code>fun main() {
+    println("Привет, мир!")
+}</code></pre>
+          <p class="directions__text mt-2 mb-0">Где пригодится: мобильная разработка под Android.</p>
+        </div>
+        <div class="tab-pane fade" id="hello-swift" role="tabpanel">
+          <pre class="lang-code"><code>print("Привет, мир!")</code></pre>
+          <p class="directions__text mt-2 mb-0">Где пригодится: мобильная разработка под iPhone.</p>
+        </div>
+        <div class="tab-pane fade" id="hello-go" role="tabpanel">
+          <pre class="lang-code"><code>package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Привет, мир!")
+}</code></pre>
+          <p class="directions__text mt-2 mb-0">Где пригодится: бэкенд, DevOps.</p>
+        </div>
+        <div class="tab-pane fade" id="hello-bash" role="tabpanel">
+          <pre class="lang-code"><code>echo "Привет, мир!"</code></pre>
+          <p class="directions__text mt-2 mb-0">Где пригодится: DevOps, кибербезопасность.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ЗНАЕШЬ ЛИ ТЫ? (карусель Bootstrap) ========== -->
+    <section class="container py-5">
+      <span class="section-label">Знаешь ли ты?</span>
+      <h2 class="fw-bold mt-3 mb-4">Факты из мира IT</h2>
+
+      <div class="row g-4 align-items-center">
+        <!-- Тьмуша с репликой -->
+        <div class="col-12 col-lg-3 text-center">
+          <div class="bubble mb-4">Листай — у меня ещё много фактов!</div>
+          <div>
+            <img class="mascot mascot--small" src="images/ada.png" alt="">
+          </div>
+        </div>
+
+        <!-- Карусель: слайды листаются сами и по стрелкам -->
+        <div class="col-12 col-lg-9">
+          <div id="facts" class="carousel slide make-card" data-bs-ride="carousel" data-bs-theme="light">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="px-5 pb-5">
+                  <h3 class="make-title">Первая программистка</h3>
+                  <p class="make-text">Первой программисткой считают Аду Лавлейс. В 1843 году она написала алгоритм для вычислительной машины Чарльза Бэббиджа — задолго до появления компьютеров.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="px-5 pb-5">
+                  <h3 class="make-title">Самый первый баг</h3>
+                  <p class="make-text">В 1947 году в компьютере Mark II нашли настоящего мотылька, который застрял в реле. Его вклеили в журнал с подписью «первый настоящий случай найденного бага».</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="px-5 pb-5">
+                  <h3 class="make-title">Python — не змея</h3>
+                  <p class="make-text">Язык Python назван не в честь змеи, а в честь британского комедийного шоу «Летающий цирк Монти Пайтона». Поэтому в примерах кода на Python часто встречаются слова spam и eggs — они из скетча этого шоу.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="px-5 pb-5">
+                  <h3 class="make-title">Язык за 10 дней</h3>
+                  <p class="make-text">Первую версию JavaScript Брендан Эйх написал всего за 10 дней в 1995 году. Сначала язык назывался Mocha, потом LiveScript. Сейчас на нём работает почти каждый сайт.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="px-5 pb-5">
+                  <h3 class="make-title">Первый сайт</h3>
+                  <p class="make-text">Первый в мире сайт создал Тим Бернерс-Ли в 1991 году. На нём объяснялось, что такое Всемирная паутина и как сделать свою страницу. Его копию до сих пор можно открыть по адресу info.cern.ch.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="px-5 pb-5">
+                  <h3 class="make-title">Git за несколько дней</h3>
+                  <p class="make-text">Git написал Линус Торвальдс в 2005 году — за несколько дней, чтобы вести разработку ядра Linux. Торвальдс же создал и сам Linux. Сегодня Git пользуются почти все программисты.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Точки внизу -->
+            <div class="carousel-indicators mb-2">
+              <button type="button" data-bs-target="#facts" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Факт 1"></button>
+              <button type="button" data-bs-target="#facts" data-bs-slide-to="1" aria-label="Факт 2"></button>
+              <button type="button" data-bs-target="#facts" data-bs-slide-to="2" aria-label="Факт 3"></button>
+              <button type="button" data-bs-target="#facts" data-bs-slide-to="3" aria-label="Факт 4"></button>
+              <button type="button" data-bs-target="#facts" data-bs-slide-to="4" aria-label="Факт 5"></button>
+              <button type="button" data-bs-target="#facts" data-bs-slide-to="5" aria-label="Факт 6"></button>
+            </div>
+
+            <!-- Стрелки по бокам -->
+            <button class="carousel-control-prev w-auto px-2" type="button" data-bs-target="#facts" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Назад</span>
+            </button>
+            <button class="carousel-control-next w-auto px-2" type="button" data-bs-target="#facts" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Вперёд</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer class="site-footer py-4 mt-5">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="h4 fw-bold text-white mb-1">Dev<span class="logo__accent">Path</span></p>
+          <p class="text-white mb-1">Лёгкий старт в IT — начни изучать уже сейчас.</p>
+          <p class="mb-0">Каждый программист когда-то написал свою первую строчку кода. Твоя — следующая.</p>
+        </div>
+        <a class="btn btn-red" href="directions.html">Начать путь</a>
+      </div>
+      <hr>
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+         <span>&copy; 2026 DevPath. Все права защищены.</span>
+        <div class="d-flex flex-wrap column-gap-3 row-gap-1">
+          <a class="site-footer__link" href="index.html">Главная</a>
+          <a class="site-footer__link" href="directions.html">Направления</a>
+          <a class="site-footer__link" href="reviews.html">Отзывы</a>
+          <a class="site-footer__link" href="about.html">О проекте</a>
+          <a class="site-footer__link" href="how.html">Как это работает</a>
+        </div> 
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== КНОПКА «НАВЕРХ» ========== -->
+  <a class="btn rounded-circle shadow to-top position-fixed bottom-0 end-0 m-4" href="#top" aria-label="Наверх">UP</a>
+
+  <!-- Bootstrap JS: нужен для меню на телефоне, вкладок и карусели -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Свой JS: плавное появление разделов и счётчики -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>

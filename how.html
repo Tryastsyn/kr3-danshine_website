@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Как это работает — DevPath</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Иконки языков программирования (Devicon) -->
+  <link href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css" rel="stylesheet">
+  <!-- Пиксельный шрифт для карточек -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Свои стили подключаем ПОСЛЕ Bootstrap -->
+  <link rel="stylesheet" href="styles/style.css?v=4">
+</head>
+<body id="top" class="d-flex flex-column min-vh-100">
+
+  <!-- ========== МЕНЮ (одинаковое на всех страницах) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold logo" href="index.html">Dev<span class="logo__accent">Path</span></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Открыть меню"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="directions.html">Направления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html">Отзывы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">О проекте</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="how.html">Как это работает</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow-1">
+
+    <!-- ========== КАК ЭТО РАБОТАЕТ: 4 шага ========== -->
+    <section class="container pt-4 pb-5">
+      <!-- Хлебные крошки -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb crumbs">
+          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Как это работает</li>
+        </ol>
+      </nav>
+
+      <div class="text-center mb-4">
+        <span class="section-label">Шаг за шагом</span>
+        <h1 class="h2 fw-bold mt-3">Как это работает</h1>
+        <p class="directions__text mb-0">DevPath ведёт от выбора направления до первых строк кода. Вот как пользоваться сайтом.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="step h-100 p-4">
+            <div class="step__number mb-3">1</div>
+            <h2 class="h5 fw-bold">Выбери направление</h2>
+            <p class="mb-0 text-secondary">На странице «Направления» 8 карточек. Посмотри, что создают в каждом, и нажми «Выбрать».</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="step h-100 p-4">
+            <div class="step__number mb-3">2</div>
+            <h2 class="h5 fw-bold">Познакомься с ним</h2>
+            <p class="mb-0 text-secondary">Узнай, чем занимаются в направлении, и загляни в «Инвентарь»: там языки и инструменты.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="step h-100 p-4">
+            <div class="step__number mb-3">3</div>
+            <h2 class="h5 fw-bold">Пройди дорожную карту</h2>
+            <p class="mb-0 text-secondary">Узнай, какие языки и инструменты изучать и в каком порядке.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="step h-100 p-4">
+            <div class="step__number mb-3">4</div>
+            <h2 class="h5 fw-bold">Изучай материалы</h2>
+            <p class="mb-0 text-secondary">Главные темы каждого языка: переменные, условия, циклы, функции — коротко и с примерами кода.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ПОДСКАЗКА: КАКОЕ НАПРАВЛЕНИЕ ВЫБРАТЬ ========== -->
+    <section class="container py-5">
+      <span class="section-label">Подсказка</span>
+      <h2 class="fw-bold mt-3 mb-2">Не знаешь, что выбрать?</h2>
+      <p class="directions__text mb-4">Найди описание, которое похоже на тебя, и нажми на карточку — откроется страница направления.</p>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-xl-3">
+          <a class="next-card h-100" href="gamedev.html">
+            <span class="next-title">Разработка игр</span>
+            <span class="next-text">Подойдёт, если любишь игры и хочешь сделать свою: с героями, уровнями и физикой.</span>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <a class="next-card h-100" href="frontend.html">
+            <span class="next-title">Фронтенд</span>
+            <span class="next-text">Подойдёт, если хочешь сразу видеть результат и любишь, когда всё красиво и удобно.</span>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <a class="next-card h-100" href="backend.html">
+            <span class="next-title">Бэкенд</span>
+            <span class="next-text">Подойдёт, если интересно, как сайт работает «под капотом»: логика, данные, серверы.</span>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <a class="next-card h-100" href="ai.html">
+            <span class="next-title">ИИ и машинное обучение</span>
+            <span class="next-text">Подойдёт, если дружишь с математикой и хочешь научить программу находить закономерности.</span>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <a class="next-card h-100" href="mobile.html">
+            <span class="next-title">Мобильная разработка</span>
+            <span class="next-text">Подойдёт, если хочешь сделать приложение, которое будет у людей в телефоне.</span>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <a class="next-card h-100" href="data.html">
+            <span class="next-title">Анализ данных</span>
+            <span class="next-text">Подойдёт, если любишь цифры и таблицы и хочешь находить в данных ответы на вопросы.</span>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <a class="next-card h-100" href="security.html">
+            <span class="next-title">Кибер&shy;безопасность</span>
+            <span class="next-text">Подойдёт, если интересно, как взламывают системы и как их защитить.</span>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <a class="next-card h-100" href="devops.html">
+            <span class="next-title">DevOps</span>
+            <span class="next-text">Подойдёт, если нравится настраивать серверы и автоматизировать рутину.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== КАК ЧИТАТЬ СЛОЖНОСТЬ ========== -->
+    <section class="container py-5">
+      <span class="section-label">Инвентарь</span>
+      <h2 class="fw-bold mt-3 mb-2">Как читать сложность</h2>
+      <p class="directions__text mb-4">На странице направления нажми на ячейку языка — откроется окно с описанием, сложностью и примером кода.</p>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="make-card">
+            <p class="lang-level fs-5 mb-2"><span>■□□</span> легко</p>
+            <p class="make-text">Можно начинать с нуля. Первый результат будет уже через пару вечеров.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="make-card">
+            <p class="lang-level fs-5 mb-2"><span>■■□</span> средне</p>
+            <p class="make-text">Лучше сначала освоить основы: переменные, условия, циклы и функции.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="make-card">
+            <p class="lang-level fs-5 mb-2"><span>■■■</span> сложно</p>
+            <p class="make-text">Много тем и правил. Понадобится несколько месяцев практики.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== СОВЕТЫ НОВИЧКУ ========== -->
+    <section class="container py-5">
+      <span class="section-label">Советы</span>
+      <h2 class="fw-bold mt-3 mb-4">Как не бросить учёбу</h2>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="make-card">
+            <h3 class="make-title">Один язык за раз</h3>
+            <p class="make-text">Не учи всё сразу. Возьми первый язык из дорожной карты и дойди с ним до маленького проекта.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="make-card">
+            <h3 class="make-title">Каждый день понемногу</h3>
+            <p class="make-text">30 минут каждый день дают больше, чем 5 часов раз в неделю.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="make-card">
+            <h3 class="make-title">Пиши код сам</h3>
+            <p class="make-text">Перепечатывай примеры из материалов и меняй их. Так запоминается лучше, чем при чтении.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="make-card">
+            <h3 class="make-title">Не бойся ошибок</h3>
+            <p class="make-text">Ошибки бывают у всех. Прочитай текст ошибки и поищи его в интернете — обычно ответ уже есть.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer class="site-footer py-4 mt-5">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="h4 fw-bold text-white mb-1">Dev<span class="logo__accent">Path</span></p>
+          <p class="text-white mb-1">Лёгкий старт в IT — начни изучать уже сейчас.</p>
+          <p class="mb-0">Каждый программист когда-то написал свою первую строчку кода. Твоя — следующая.</p>
+        </div>
+        <a class="btn btn-red" href="directions.html">Начать путь</a>
+      </div>
+      <hr>
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+         <span>&copy; 2026 DevPath. Все права защищены.</span>
+        <div class="d-flex flex-wrap column-gap-3 row-gap-1">
+          <a class="site-footer__link" href="index.html">Главная</a>
+          <a class="site-footer__link" href="directions.html">Направления</a>
+          <a class="site-footer__link" href="reviews.html">Отзывы</a>
+          <a class="site-footer__link" href="about.html">О проекте</a>
+          <a class="site-footer__link" href="how.html">Как это работает</a>
+        </div> 
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== КНОПКА «НАВЕРХ» ========== -->
+  <a class="btn rounded-circle shadow to-top position-fixed bottom-0 end-0 m-4" href="#top" aria-label="Наверх">UP</a>
+
+  <!-- Bootstrap JS: нужен для меню на телефоне и accordion -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Свой JS: плавное появление разделов и счётчики -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>

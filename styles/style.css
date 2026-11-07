@@ -1,0 +1,692 @@
+/* =========================================
+   1. ПЕРЕМЕННЫЕ: цвета проекта
+   Палитра взята у маскота Ады:
+   волосы — розовый, глаза и роза — красный, платье — чёрный и серый
+   ========================================= */
+:root {
+  --dp-black: #0d0b0e;       /* фон сайта */
+  --dp-dark: #17141a;        /* фон карточек */
+  --dp-gray: #2b2630;        /* рамки */
+  --dp-gray-light: #a8a1ad;  /* второстепенный текст */
+  --dp-white: #f7f2f5;       /* основной текст */
+  --dp-red: #d7263d;         /* красный: глаза, роза, зонт */
+  --dp-red-hover: #b81c31;   /* красный при наведении */
+  --dp-pink: #f3d3e3;        /* розовый: волосы */
+  --dp-pink-dark: #d9a0bf;   /* тень волос */
+  --menu-height: 70px;
+}
+
+/* =========================================
+   2. ФОН: один на весь сайт, мягкие свечения
+   без резких границ между разделами
+   ========================================= */
+body {
+  color: var(--dp-white);
+  background:
+    radial-gradient(ellipse 60% 40% at 85% 5%, rgba(215, 38, 61, 0.28), transparent),
+    radial-gradient(ellipse 50% 30% at 0% 35%, rgba(243, 211, 227, 0.10), transparent),
+    radial-gradient(ellipse 50% 30% at 100% 65%, rgba(215, 38, 61, 0.14), transparent),
+    radial-gradient(ellipse 50% 25% at 10% 95%, rgba(243, 211, 227, 0.08), transparent),
+    var(--dp-black);
+}
+
+/* Закреплённое меню не перекрывает заголовок раздела */
+section {
+  scroll-margin-top: var(--menu-height);
+}
+
+/* Подпись над заголовком раздела */
+.section-label {
+  display: inline-block;
+  padding: 4px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dp-pink);
+  border: 1px solid var(--dp-gray);
+  border-radius: 999px;
+}
+
+/* =========================================
+   3. КНОПКИ (меняем переменные Bootstrap)
+   ========================================= */
+.btn-red {
+  --bs-btn-color: var(--dp-white);
+  --bs-btn-bg: var(--dp-red);
+  --bs-btn-border-color: var(--dp-red);
+  --bs-btn-hover-color: var(--dp-white);
+  --bs-btn-hover-bg: var(--dp-red-hover);
+  --bs-btn-hover-border-color: var(--dp-red-hover);
+  --bs-btn-active-color: var(--dp-white);
+  --bs-btn-active-bg: var(--dp-red-hover);
+  --bs-btn-active-border-color: var(--dp-red-hover);
+  font-weight: 600;
+}
+
+.btn-outline-pink {
+  --bs-btn-color: var(--dp-pink);
+  --bs-btn-border-color: var(--dp-pink-dark);
+  --bs-btn-hover-color: var(--dp-black);
+  --bs-btn-hover-bg: var(--dp-pink);
+  --bs-btn-hover-border-color: var(--dp-pink);
+  --bs-btn-active-color: var(--dp-black);
+  --bs-btn-active-bg: var(--dp-pink-dark);
+  --bs-btn-active-border-color: var(--dp-pink-dark);
+  font-weight: 600;
+}
+
+/* =========================================
+   4. ЗНАЧКИ: модификаторы для badge
+   ========================================= */
+.badge--pink {
+  background: var(--dp-pink);
+  color: var(--dp-black);
+}
+
+.badge--red {
+  background: var(--dp-red);
+  color: var(--dp-white);
+}
+
+.badge--light {
+  background: var(--dp-white);
+  color: var(--dp-black);
+}
+
+/* =========================================
+   5. МЕНЮ И ЛОГОТИП
+   ========================================= */
+.site-nav {
+  background: rgba(13, 11, 14, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--dp-gray);
+  --bs-navbar-active-color: var(--dp-pink);
+  --bs-navbar-hover-color: var(--dp-pink);
+}
+
+.logo__accent {
+  color: var(--dp-red);
+}
+
+/* =========================================
+   6. БАННЕР (hero)
+   ========================================= */
+/* Текст с переливом: от цвета волос к цвету розы */
+.hero__accent {
+  background: linear-gradient(90deg, var(--dp-pink), var(--dp-red));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__text {
+  color: var(--dp-gray-light);
+}
+
+/* Красное свечение за Адой, плавно исчезает к краям */
+.hero__visual {
+  background: radial-gradient(circle closest-side, rgba(215, 38, 61, 0.35), transparent);
+}
+
+/* =========================================
+   7. МАСКОТ АДА И ОБЛАЧКО С РЕПЛИКОЙ
+   ========================================= */
+.mascot {
+  width: 100%;
+  max-width: 320px; /* 80 px × 4 — пиксели ровные */
+  image-rendering: pixelated;
+  animation: float 3s ease-in-out infinite;
+}
+
+.mascot--small {
+  max-width: 160px; /* 80 px × 2 */
+}
+
+/* Тьмуша плавно покачивается вверх-вниз */
+@keyframes float {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bubble {
+  position: relative;
+  display: inline-block;
+  max-width: 320px;
+  padding: 12px 18px;
+  color: var(--dp-black);
+  background: var(--dp-pink);
+  border-radius: 16px;
+}
+
+/* Хвостик облачка (смотрит вниз) */
+.bubble::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: var(--dp-pink) transparent transparent;
+}
+
+/* Модификатор: хвостик смотрит вправо */
+.bubble--right::after {
+  left: auto;
+  right: -10px;
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--dp-pink);
+}
+
+/* =========================================
+   8. ШАГИ «КАК ЭТО РАБОТАЕТ»
+   ========================================= */
+.step {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--dp-gray);
+  border-radius: 1rem;
+}
+
+.step__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dp-white);
+  background: var(--dp-red);
+  border-radius: 50%;
+}
+
+/* =========================================
+   9. НАПРАВЛЕНИЯ: карточки
+   dir — сокращение от direction (направление)
+   ========================================= */
+.directions__text {
+  color: var(--dp-gray-light);
+}
+
+/* Карточка */
+.dir-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  background: var(--dp-dark);
+  border: 4px solid var(--dp-pink);
+  box-shadow: 0 0 0 4px var(--dp-black);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+/* При наведении карточка «отрывается» от красной тени */
+.dir-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 0 0 0 4px var(--dp-black), 8px 8px 0 4px var(--dp-red);
+}
+
+/* Название пиксельным шрифтом.
+   Место под две строки, чтобы картинки в ряду стояли ровно */
+.dir-title {
+  display: flex;
+  align-items: center;
+  min-height: 3em;
+  margin-bottom: 10px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* Пиксельная картинка в чёрной рамке */
+.dir-img {
+  width: 100%;
+  border: 4px solid var(--dp-black);
+  outline: 2px solid var(--dp-gray);
+  image-rendering: pixelated; /* пиксели чёткие, без размытия */
+}
+
+/* Описание */
+.dir-text {
+  margin: 14px 0;
+  color: var(--dp-gray-light);
+}
+
+/* Ряд иконок языков */
+.dir-icons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* Каждая иконка — квадратная ячейка */
+.dir-icons i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  font-size: 1.5rem;
+  color: var(--dp-pink);
+  background: var(--dp-black);
+  border: 2px solid var(--dp-gray);
+}
+
+/* Кнопка «Выбрать» */
+.dir-btn {
+  margin-top: auto; /* кнопка всегда внизу карточки */
+  padding: 12px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.7rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--dp-white);
+  background: var(--dp-red);
+  box-shadow: 4px 4px 0 var(--dp-black);
+}
+
+.dir-btn:hover {
+  color: var(--dp-white);
+  background: var(--dp-red-hover);
+}
+
+/* Кнопка «нажимается», как в игре */
+.dir-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+/* =========================================
+   10. ЧАСТЫЕ ВОПРОСЫ (меняем переменные accordion)
+   ========================================= */
+.faq {
+  --bs-accordion-bg: var(--dp-dark);
+  --bs-accordion-border-color: var(--dp-gray);
+  --bs-accordion-active-bg: rgba(215, 38, 61, 0.15);
+  --bs-accordion-active-color: var(--dp-pink);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(215, 38, 61, 0.35);
+}
+
+/* В тёмной теме стрелка синяя — делаем её светлой */
+.faq .accordion-button::after {
+  filter: grayscale(1) brightness(1.8);
+}
+
+/* =========================================
+   11. ПОДВАЛ И КНОПКА «НАВЕРХ»
+   ========================================= */
+.site-footer {
+  color: var(--dp-gray-light);
+  border-top: 1px solid var(--dp-gray);
+}
+
+.site-footer__link {
+  color: var(--dp-white);
+  text-decoration: none;
+}
+
+.site-footer__link:hover {
+  color: var(--dp-pink);
+}
+
+/* Кнопка «Наверх»: тёмная, как фон, стрелка красная (меняем переменные Bootstrap) */
+/* Кнопка «Наверх»: тёмная, как фон, стрелка красная (меняем переменные Bootstrap) */
+/* Кнопка «Наверх»: тёмная, как фон, стрелка красная (меняем переменные Bootstrap) */
+.to-top {
+  --bs-btn-color: var(--dp-red);
+  --bs-btn-bg: var(--dp-dark);
+  --bs-btn-border-color: var(--dp-gray);
+  --bs-btn-hover-color: var(--dp-white);
+  --bs-btn-hover-bg: var(--dp-red);
+  --bs-btn-hover-border-color: var(--dp-red);
+  --bs-btn-active-color: var(--dp-white);
+  --bs-btn-active-bg: var(--dp-red-hover);
+  --bs-btn-active-border-color: var(--dp-red-hover);
+  --bs-btn-color: var(--dp-red);
+  --bs-btn-bg: var(--dp-dark);
+  --bs-btn-border-color: var(--dp-gray);
+  --bs-btn-hover-color: var(--dp-white);
+  --bs-btn-hover-bg: var(--dp-red);
+  --bs-btn-hover-border-color: var(--dp-red);
+  --bs-btn-active-color: var(--dp-white);
+  --bs-btn-active-bg: var(--dp-red-hover);
+  --bs-btn-active-border-color: var(--dp-red-hover);
+  --bs-btn-color: var(--dp-red);
+  --bs-btn-bg: var(--dp-dark);
+  --bs-btn-border-color: var(--dp-gray);
+  --bs-btn-hover-color: var(--dp-white);
+  --bs-btn-hover-bg: var(--dp-red);
+  --bs-btn-hover-border-color: var(--dp-red);
+  --bs-btn-active-color: var(--dp-white);
+  --bs-btn-active-bg: var(--dp-red-hover);
+  --bs-btn-active-border-color: var(--dp-red-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 1.25rem;
+}
+
+/* =========================================
+   12. СТРАНИЦА НАПРАВЛЕНИЯ
+   ========================================= */
+
+/* Хлебные крошки (меняем переменные Bootstrap) */
+.crumbs {
+  --bs-breadcrumb-divider-color: var(--dp-gray-light);
+  --bs-breadcrumb-item-active-color: var(--dp-pink);
+  font-size: 0.9rem;
+}
+
+.crumbs a {
+  color: var(--dp-gray-light);
+  text-decoration: none;
+}
+
+.crumbs a:hover {
+  color: var(--dp-pink);
+}
+
+/* Вступление: картинка слева, окно с описанием справа */
+.intro {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  background: var(--dp-dark);
+  border: 4px solid var(--dp-pink);
+  box-shadow: 0 0 0 4px var(--dp-black);
+}
+
+.intro-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-right: 4px solid var(--dp-pink);
+  image-rendering: pixelated;
+}
+
+.intro-body {
+  align-self: center; /* текст по центру окна по высоте */
+  padding: 32px;
+}
+
+.intro-title {
+  margin-bottom: 18px;
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.intro-text {
+  font-size: 1.05rem;
+  color: var(--dp-gray-light);
+}
+
+/* Меню-выбор, как в игре */
+.intro-menu {
+  display: grid;
+  gap: 4px;
+  padding: 16px 0 0;
+  margin: 0;
+  list-style: none;
+  border-top: 2px dashed var(--dp-gray);
+}
+
+.intro-menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--dp-white);
+}
+
+/* Квадратик-курсор перед пунктом меню */
+.intro-menu a::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--dp-gray);
+}
+
+.intro-menu a:hover {
+  color: var(--dp-pink);
+}
+
+.intro-menu a:hover::before {
+  background: var(--dp-red);
+}
+
+/* Карточки «Что создают» */
+.make-card {
+  height: 100%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid var(--dp-gray);
+}
+
+.make-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* Красный пиксель перед заголовком */
+.make-title::before {
+  content: "";
+  flex: none;
+  width: 10px;
+  height: 10px;
+  background: var(--dp-red);
+}
+
+.make-text {
+  margin: 0;
+  color: var(--dp-gray-light);
+}
+
+/* Инвентарь: ячейки с языками */
+.inventory {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 8px;
+  background: var(--dp-black);
+  border: 4px solid var(--dp-gray);
+  box-shadow: inset 0 0 0 4px var(--dp-dark);
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.slot:hover {
+  border-color: var(--dp-pink);
+  transform: translateY(-4px);
+}
+
+.slot i {
+  font-size: 2.6rem;
+  color: var(--dp-pink);
+}
+
+.slot-name {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--dp-white);
+}
+
+/* Модальное окно языка (меняем переменные Bootstrap) */
+.lang-modal {
+  --bs-modal-bg: var(--dp-dark);
+  --bs-modal-border-color: var(--dp-pink);
+  --bs-modal-border-width: 4px;
+  --bs-modal-border-radius: 0;
+  --bs-modal-inner-border-radius: 0;
+  --bs-modal-header-border-color: var(--dp-gray);
+}
+
+.lang-modal .modal-content {
+  box-shadow: 0 0 0 4px var(--dp-black), 8px 8px 0 4px var(--dp-red);
+}
+
+.lang-modal .modal-header {
+  gap: 12px;
+}
+
+.lang-modal .modal-title {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.lang-icon {
+  font-size: 2rem;
+  color: var(--dp-pink);
+}
+
+.lang-type {
+  margin-bottom: 4px;
+  color: var(--dp-gray-light);
+}
+
+/* Шкала сложности ■■□ */
+.lang-level span {
+  color: var(--dp-red);
+  letter-spacing: 2px;
+}
+
+.lang-code-title {
+  margin-bottom: 6px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: var(--dp-pink);
+}
+
+.lang-code {
+  margin: 0;
+  padding: 14px;
+  font-size: 0.85rem;
+  color: var(--dp-pink);
+  background: var(--dp-black);
+  border: 2px solid var(--dp-gray);
+}
+
+/* Карточка «Материалы» */
+.next-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+  color: var(--dp-white);
+  text-decoration: none;
+  background: var(--dp-dark);
+  border: 4px solid var(--dp-pink);
+  box-shadow: 0 0 0 4px var(--dp-black);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.next-card:hover {
+  color: var(--dp-white);
+  transform: translate(-4px, -4px);
+  box-shadow: 0 0 0 4px var(--dp-black), 8px 8px 0 4px var(--dp-red);
+}
+
+.next-title {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.next-text {
+  color: var(--dp-gray-light);
+}
+
+/* Планшеты: картинка над окном, инвентарь в 3 колонки */
+@media (max-width: 991px) {
+  .intro {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-img {
+    border-right: 0;
+    border-bottom: 4px solid var(--dp-pink);
+  }
+
+  .inventory {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Телефоны: инвентарь в 2 колонки */
+@media (max-width: 575px) {
+  .intro-body {
+    padding: 20px;
+  }
+
+  .inventory {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Если в системе отключена анимация — Тьмуша не качается */
+@media (prefers-reduced-motion: reduce) {
+  .mascot {
+    animation: none;
+  }
+}
+
+/* =========================================
+   13. ПЛАВНОЕ ПОЯВЛЕНИЕ РАЗДЕЛОВ
+   Классы reveal, from-top и show ставит scripts/main.js
+   ========================================= */
+/* Раздел спрятан и сдвинут вниз — появится снизу */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Раздел ушёл за верхний край — сдвинут вверх и появится сверху */
+.reveal.from-top {
+  transform: translateY(-30px);
+}
+
+/* Раздел на экране. Это правило стоит последним, поэтому оно главнее */
+.reveal.show {
+  opacity: 1;
+  transform: none;
+}
+
+
+
+/* =========================================
+   14. СМЕНА ФРАЗ
+   Класс hide ставит scripts/main.js на время смены текста
+   ========================================= */
+.phrase {
+  transition: opacity 0.5s ease;
+}
+
+.phrase.hide {
+  opacity: 0;
+}

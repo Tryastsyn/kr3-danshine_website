@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О проекте — DevPath</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Иконки языков программирования (Devicon) -->
+  <link href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css" rel="stylesheet">
+  <!-- Пиксельный шрифт для карточек -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Свои стили подключаем ПОСЛЕ Bootstrap -->
+  <link rel="stylesheet" href="styles/style.css?v=4">
+</head>
+<body id="top" class="d-flex flex-column min-vh-100">
+
+  <!-- ========== МЕНЮ (одинаковое на всех страницах) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold logo" href="index.html">Dev<span class="logo__accent">Path</span></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Открыть меню"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="directions.html">Направления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html">Отзывы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="about.html">О проекте</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="how.html">Как это работает</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow-1">
+
+    <!-- ========== О ПРОЕКТЕ ========== -->
+    <section class="container pt-4 pb-5">
+      <!-- Хлебные крошки -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb crumbs">
+          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+          <li class="breadcrumb-item active" aria-current="page">О проекте</li>
+        </ol>
+      </nav>
+
+      <div class="text-center mb-5">
+        <span class="section-label">О проекте</span>
+        <h1 class="h2 fw-bold mt-3">Что такое DevPath</h1>
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <p class="lead directions__text mb-0">
+              DevPath — навигатор по IT для новичков. Сайт помогает понять, чем занимаются
+              в разных направлениях, какие языки и инструменты там нужны и с чего начать учиться.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="make-card">
+            <h2 class="make-title">Зачем</h2>
+            <p class="make-text">В IT много направлений, и новичку трудно понять, чем они отличаются. DevPath объясняет это простыми словами.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="make-card">
+            <h2 class="make-title">Для кого</h2>
+            <p class="make-text">Для школьников, студентов и всех, кто думает о работе в IT, но ещё не выбрал направление.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="make-card">
+            <h2 class="make-title">Что внутри</h2>
+            <p class="make-text">8 направлений. У каждого — описание, языки и инструменты, дорожная карта и материалы с примерами кода.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="make-card">
+            <h2 class="make-title">Без регистрации</h2>
+            <p class="make-text">Сайт бесплатный: не нужно создавать аккаунт, просто открой направление и читай.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== КАК СДЕЛАН САЙТ ========== -->
+    <section class="container py-5">
+      <span class="section-label">Технологии</span>
+      <h2 class="fw-bold mt-3 mb-2">Как сделан сайт</h2>
+      <p class="directions__text mb-4">
+        Страницы свёрстаны на HTML и CSS. Bootstrap отвечает за сетку, меню, аккордеоны и модальные окна,
+        цвета сайта хранятся в CSS-переменных. Иконки — Devicon, пиксельный шрифт — Press Start 2P.
+      </p>
+
+      <div class="inventory">
+        <div class="slot">
+          <i class="devicon-html5-plain"></i>
+          <span class="slot-name">HTML</span>
+        </div>
+
+        <div class="slot">
+          <i class="devicon-css3-plain"></i>
+          <span class="slot-name">CSS</span>
+        </div>
+
+        <div class="slot">
+          <i class="devicon-bootstrap-plain"></i>
+          <span class="slot-name">Bootstrap</span>
+        </div>
+
+        <div class="slot">
+          <i class="devicon-git-plain"></i>
+          <span class="slot-name">Git</span>
+        </div>
+
+        <div class="slot">
+          <i class="devicon-github-original"></i>
+          <span class="slot-name">GitHub</span>
+        </div>
+
+        <div class="slot">
+          <i class="devicon-vscode-plain"></i>
+          <span class="slot-name">VS Code</span>
+        </div>
+      </div>
+    </section>  
+
+  </main>
+
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer class="site-footer py-4 mt-5">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="h4 fw-bold text-white mb-1">Dev<span class="logo__accent">Path</span></p>
+          <p class="text-white mb-1">Лёгкий старт в IT — начни изучать уже сейчас.</p>
+          <p class="mb-0">Каждый программист когда-то написал свою первую строчку кода. Твоя — следующая.</p>
+        </div>
+        <a class="btn btn-red" href="directions.html">Начать путь</a>
+      </div>
+      <hr>
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+         <span>&copy; 2026 DevPath. Все права защищены.</span>
+        <div class="d-flex flex-wrap column-gap-3 row-gap-1">
+          <a class="site-footer__link" href="index.html">Главная</a>
+          <a class="site-footer__link" href="directions.html">Направления</a>
+          <a class="site-footer__link" href="reviews.html">Отзывы</a>
+          <a class="site-footer__link" href="about.html">О проекте</a>
+          <a class="site-footer__link" href="how.html">Как это работает</a>
+        </div> 
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== КНОПКА «НАВЕРХ» ========== -->
+  <a class="btn rounded-circle shadow to-top position-fixed bottom-0 end-0 m-4" href="#top" aria-label="Наверх">UP</a>
+
+  <!-- Bootstrap JS: нужен для меню на телефоне и accordion -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Свой JS: плавное появление разделов и счётчики -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>

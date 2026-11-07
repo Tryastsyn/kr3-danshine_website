@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Частые вопросы — DevPath</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Иконки языков программирования (Devicon) -->
+  <link href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css" rel="stylesheet">
+  <!-- Пиксельный шрифт для карточек -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Свои стили подключаем ПОСЛЕ Bootstrap -->
+  <link rel="stylesheet" href="styles/style.css?v=4">
+</head>
+<body id="top" class="d-flex flex-column min-vh-100">
+
+  <!-- ========== МЕНЮ (одинаковое на всех страницах) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold logo" href="index.html">Dev<span class="logo__accent">Path</span></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Открыть меню"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="directions.html">Направления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html">Отзывы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">О проекте</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="how.html">Как это работает</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow-1">
+
+    <!-- ========== ЧАСТЫЕ ВОПРОСЫ ========== -->
+    <section class="container pt-4 pb-5">
+      <!-- Хлебные крошки -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb crumbs">
+          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Вопросы</li>
+        </ol>
+      </nav>
+
+      <span class="section-label">FAQ</span>
+      <h1 class="h2 fw-bold mt-3 mb-2">Частые вопросы</h1>
+      <p class="directions__text mb-5">Ответы на вопросы, которые чаще всего возникают у новичков. Нажми на вопрос, чтобы открыть ответ.</p>
+
+      <div class="row">
+        <div class="col-12 col-xl-10">
+
+          <!-- Группа 1: общие вопросы -->
+          <h2 class="h4 fw-bold mb-3">Общие вопросы</h2>
+          <div class="accordion faq mb-5" id="faqGeneral">
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-start"
+                  aria-expanded="true"
+                  aria-controls="q-start"
+                >
+                  С какого направления лучше начать?
+                </button>
+              </h3>
+              <div id="q-start" class="accordion-collapse collapse show" data-bs-parent="#faqGeneral">
+                <div class="accordion-body">
+                  <p>Отталкивайся от того, что хочется создавать. Любишь игры — смотри разработку игр, хочешь своё приложение в телефоне — мобильную разработку, нравятся цифры и таблицы — анализ данных. Когда результат интересен, учиться намного легче.</p>
+                  <p class="mb-0">Если пока ничего не цепляет, начни с фронтенда: результат сразу видно в браузере, а для старта нужен только редактор кода, например VS Code. Подсказки по каждому направлению есть на странице «Как это работает».</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-math"
+                  aria-expanded="false"
+                  aria-controls="q-math"
+                >
+                  Нужно ли хорошо знать математику?
+                </button>
+              </h3>
+              <div id="q-math" class="accordion-collapse collapse" data-bs-parent="#faqGeneral">
+                <div class="accordion-body">
+                  <p>Для старта в большинстве направлений хватит школьной математики: арифметики, процентов и логики. Больше всего математики нужно в трёх направлениях:</p>
+                  <ul>
+                    <li><strong>ИИ и машинное обучение</strong> — векторы и матрицы, производные, теория вероятностей;</li>
+                    <li><strong>Анализ данных</strong> — статистика: среднее, медиана, разброс, корреляция;</li>
+                    <li><strong>Разработка игр</strong> — векторы и тригонометрия для движения, поворотов и физики.</li>
+                  </ul>
+                  <p class="mb-0">Эти темы не обязательно учить заранее — их удобно подтягивать, когда они встречаются в задачах.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-time"
+                  aria-expanded="false"
+                  aria-controls="q-time"
+                >
+                  Сколько нужно учиться, чтобы найти первую работу?
+                </button>
+              </h3>
+              <div id="q-time" class="accordion-collapse collapse" data-bs-parent="#faqGeneral">
+                <div class="accordion-body">
+                  <p>Точного срока нет: всё зависит от направления и от того, сколько времени ты уделяешь учёбе. При регулярных занятиях по 1–2 часа в день многим требуется от полугода до полутора лет.</p>
+                  <p class="mb-0">Работодателю важнее не срок, а то, что ты умеешь. 2–3 своих проекта на GitHub расскажут о тебе больше, чем список пройденных курсов.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-pc"
+                  aria-expanded="false"
+                  aria-controls="q-pc"
+                >
+                  Нужен ли мощный компьютер?
+                </button>
+              </h3>
+              <div id="q-pc" class="accordion-collapse collapse" data-bs-parent="#faqGeneral">
+                <div class="accordion-body">
+                  <p>Для фронтенда, бэкенда, анализа данных и DevOps хватит обычного ноутбука, желательно с 8 ГБ оперативной памяти или больше. Но есть исключения:</p>
+                  <ul class="mb-0">
+                    <li><strong>Разработка игр</strong> — для Unreal Engine нужен мощный компьютер с хорошей видеокартой, Unity менее требователен;</li>
+                    <li><strong>Мобильная разработка</strong> — приложения для iPhone собирают в Xcode, а он работает только на macOS. Для Android подойдёт любой компьютер, но эмулятору телефона нужно много памяти;</li>
+                    <li><strong>ИИ</strong> — большие модели обучают на видеокартах, но для учёбы хватит бесплатного Google Colab, который работает прямо в браузере.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-english"
+                  aria-expanded="false"
+                  aria-controls="q-english"
+                >
+                  Нужно ли знать английский?
+                </button>
+              </h3>
+              <div id="q-english" class="accordion-collapse collapse" data-bs-parent="#faqGeneral">
+                <div class="accordion-body">
+                  <p>Для старта не обязательно, но он сильно помогает. Команды в языках программирования — это английские слова: <code>if</code>, <code>while</code>, <code>return</code>. Документация, тексты ошибок и большинство ответов в интернете тоже на английском.</p>
+                  <p class="mb-0">Достаточно уметь читать технический текст со словарём или переводчиком. Этот навык быстро растёт сам по мере учёбы.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-change"
+                  aria-expanded="false"
+                  aria-controls="q-change"
+                >
+                  Можно ли потом сменить направление?
+                </button>
+              </h3>
+              <div id="q-change" class="accordion-collapse collapse" data-bs-parent="#faqGeneral">
+                <div class="accordion-body">
+                  <p>Да, и так бывает часто. Основы переносятся между направлениями: переменные, условия, циклы, функции, Git и умение искать ответы пригодятся везде.</p>
+                  <p class="mb-0">Например, из фронтенда легко перейти в бэкенд на Node.js — язык тот же, JavaScript. А из анализа данных — в машинное обучение: в обоих используют Python и pandas.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-free"
+                  aria-expanded="false"
+                  aria-controls="q-free"
+                >
+                  Материалы на сайте платные?
+                </button>
+              </h3>
+              <div id="q-free" class="accordion-collapse collapse" data-bs-parent="#faqGeneral">
+                <div class="accordion-body">
+                  <p class="mb-0">Нет. Всё на DevPath бесплатно и без регистрации. На странице «Материалы» у каждого направления собраны главные темы по языкам и инструментам — коротко и с примерами кода.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Группа 2: вопросы по направлениям -->
+          <h2 class="h4 fw-bold mb-3">Вопросы по направлениям</h2>
+          <div class="accordion faq" id="faqDirections">
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-gamedev-engine"
+                  aria-expanded="false"
+                  aria-controls="q-gamedev-engine"
+                >
+                  Разработка игр: Unity или Unreal Engine — что выбрать новичку?
+                </button>
+              </h3>
+              <div id="q-gamedev-engine" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>Новичкам чаще советуют Unity: язык C# проще, чем C++, движок не требует мощного компьютера, а уроков по нему очень много. На Unity делают многие мобильные и инди-игры.</p>
+                  <p class="mb-0">Unreal Engine выбирают для игр с реалистичной графикой. В нём есть Blueprints — визуальное программирование блоками, с ним первую игру можно собрать без кода. Но для серьёзных проектов понадобится C++.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-gamedev-solo"
+                  aria-expanded="false"
+                  aria-controls="q-gamedev-solo"
+                >
+                  Разработка игр: можно ли сделать игру одному?
+                </button>
+              </h3>
+              <div id="q-gamedev-solo" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>Да, многие известные инди-игры сделал один человек или маленькая команда. Начинай с маленьких игр: «Змейка», платформер на один уровень, простая головоломка. Большая «игра мечты» на старте почти всегда остаётся недоделанной.</p>
+                  <p class="mb-0">Кроме кода, игре нужны графика и звук. Для учёбы можно брать бесплатные наборы в Unity Asset Store и на itch.io.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-frontend-react"
+                  aria-expanded="false"
+                  aria-controls="q-frontend-react"
+                >
+                  Фронтенд: нужно ли сразу учить React?
+                </button>
+              </h3>
+              <div id="q-frontend-react" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>Нет. React — это библиотека на JavaScript, и без знания самого JavaScript в нём будет трудно. Хороший порядок такой: HTML → CSS → JavaScript → Git → React.</p>
+                  <p class="mb-0">Сначала научись делать адаптивные страницы и добавлять интерактив на чистом JavaScript: меню, формы, модальные окна. Когда это получается, React пойдёт намного легче.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-frontend-design"
+                  aria-expanded="false"
+                  aria-controls="q-frontend-design"
+                >
+                  Фронтенд: чем фронтенд-разработчик отличается от веб-дизайнера?
+                </button>
+              </h3>
+              <div id="q-frontend-design" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>Дизайнер придумывает, как будет выглядеть сайт, и рисует макет, например в Figma. Фронтенд-разработчик превращает макет в настоящую страницу: верстает её, делает адаптивной и добавляет логику на JavaScript.</p>
+                  <p class="mb-0">Рисовать фронтендеру не нужно, но понимать основы дизайна — сетку, отступы, работу с цветом и шрифтами — очень полезно.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-backend-lang"
+                  aria-expanded="false"
+                  aria-controls="q-backend-lang"
+                >
+                  Бэкенд: какой язык выбрать?
+                </button>
+              </h3>
+              <div id="q-backend-lang" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>Серверную часть пишут на Python, Java, Go, JavaScript (Node.js), C#, PHP и других языках. Для первого языка часто советуют Python: простой синтаксис и много материалов.</p>
+                  <p class="mb-0">Java и C# часто используют в больших компаниях и банках, Go — в сервисах с большой нагрузкой. Главное — выбрать один язык и дойти на нём до своего API с базой данных.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-backend-api"
+                  aria-expanded="false"
+                  aria-controls="q-backend-api"
+                >
+                  Бэкенд: что такое API и зачем оно нужно?
+                </button>
+              </h3>
+              <div id="q-backend-api" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>API — это правила, по которым программы общаются друг с другом. Например, приложение погоды отправляет запрос на сервер, а сервер отвечает данными о погоде в формате JSON.</p>
+                  <p class="mb-0">Бэкенд-разработчик как раз пишет такие API: принимает запросы от сайта или приложения, берёт данные из базы, обрабатывает их и отправляет ответ.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-ai-data"
+                  aria-expanded="false"
+                  aria-controls="q-ai-data"
+                >
+                  ИИ: чем машинное обучение отличается от анализа данных?
+                </button>
+              </h3>
+              <div id="q-ai-data" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>Аналитик данных изучает данные и отвечает на вопросы бизнеса: почему упали продажи, какой товар покупают чаще. Результат его работы — отчёты, графики и выводы.</p>
+                  <p class="mb-0">Специалист по машинному обучению создаёт модели, которые сами делают прогнозы: рекомендуют фильмы, распознают лица, переводят текст. Направления близки — в обоих используют Python и pandas, поэтому из анализа данных часто переходят в ИИ.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-ai-gpt"
+                  aria-expanded="false"
+                  aria-controls="q-ai-gpt"
+                >
+                  ИИ: придётся ли создавать свой ChatGPT?
+                </button>
+              </h3>
+              <div id="q-ai-gpt" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>Нет. Такие огромные модели создают большие команды исследователей на тысячах видеокарт.</p>
+                  <p class="mb-0">Обычная работа ML-инженера — обучить модель под конкретную задачу, например отличать спам от обычных писем, или встроить готовую модель в продукт. Путь в направление: Python → NumPy и pandas → основы машинного обучения → нейросети на PyTorch.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-mobile-lang"
+                  aria-expanded="false"
+                  aria-controls="q-mobile-lang"
+                >
+                  Мобильная разработка: Kotlin, Swift или Flutter?
+                </button>
+              </h3>
+              <div id="q-mobile-lang" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>Kotlin — основной язык для Android, Swift — для iPhone. На них приложение пишут отдельно для каждой системы, зато оно работает быстро и может использовать все возможности телефона.</p>
+                  <p class="mb-0">Flutter (язык Dart) позволяет написать одно приложение сразу для Android и iOS. Если у тебя нет Mac, начни с Kotlin или Flutter: для Swift нужен Xcode, а он работает только на macOS.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-mobile-store"
+                  aria-expanded="false"
+                  aria-controls="q-mobile-store"
+                >
+                  Мобильная разработка: как выложить приложение в магазин?
+                </button>
+              </h3>
+              <div id="q-mobile-store" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>В Google Play разработчик один раз платит 25 долларов за аккаунт. В App Store нужна подписка Apple Developer Program — 99 долларов в год. После проверки приложение появляется в магазине.</p>
+                  <p class="mb-0">Для учёбы публиковать ничего не нужно: приложение можно запускать в эмуляторе на компьютере или прямо на своём телефоне.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-data-sql"
+                  aria-expanded="false"
+                  aria-controls="q-data-sql"
+                >
+                  Анализ данных: нужно ли учить SQL, если есть Python?
+                </button>
+              </h3>
+              <div id="q-data-sql" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>Да, SQL — главный инструмент аналитика. Данные компаний хранятся в базах, и чтобы их достать, нужно написать SQL-запрос: выбрать нужные столбцы, отфильтровать строки, посчитать суммы.</p>
+                  <p class="mb-0">Python с pandas нужен уже потом — чтобы обработать данные, построить графики и найти закономерности. Обычно учат оба, и начинать удобно с SQL: он проще.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-data-day"
+                  aria-expanded="false"
+                  aria-controls="q-data-day"
+                >
+                  Анализ данных: чем аналитик занимается каждый день?
+                </button>
+              </h3>
+              <div id="q-data-day" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>Получает вопрос от коллег, например: «Почему в марте упали продажи?». Дальше достаёт данные из базы через SQL, чистит их от ошибок и пропусков, считает показатели и строит графики.</p>
+                  <p class="mb-0">В конце аналитик объясняет вывод простыми словами и советует, что делать. Поэтому кроме техники здесь важно умение понятно рассказывать о результатах.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-security-legal"
+                  aria-expanded="false"
+                  aria-controls="q-security-legal"
+                >
+                  Кибербезопасность: законно ли учиться взлому?
+                </button>
+              </h3>
+              <div id="q-security-legal" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>Да, если тренироваться на своих системах или на учебных площадках, где взламывать разрешено: TryHackMe, Hack The Box и соревнования CTF.</p>
+                  <p class="mb-0">Взламывать чужие сайты и устройства без разрешения владельца нельзя — это уголовное преступление. Специалисты по безопасности проверяют системы только по договору с компанией.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-security-start"
+                  aria-expanded="false"
+                  aria-controls="q-security-start"
+                >
+                  Кибербезопасность: с чего начать?
+                </button>
+              </h3>
+              <div id="q-security-start" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>Чтобы защищать системы, нужно понимать, как они устроены. Поэтому сначала изучают основы: как работают компьютерные сети, командную строку Linux и один язык для скриптов — Python или Bash.</p>
+                  <p class="mb-0">После этого переходят к самой безопасности: типичным уязвимостям сайтов, инструментам Kali Linux и задачам CTF. Эта база нужна и тем, кто защищает системы, и тем, кто ищет в них уязвимости.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-devops-start"
+                  aria-expanded="false"
+                  aria-controls="q-devops-start"
+                >
+                  DevOps: можно ли начать карьеру сразу с DevOps?
+                </button>
+              </h3>
+              <div id="q-devops-start" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>Можно, но это сложнее, чем в других направлениях. DevOps-инженер связывает разработку и серверы, поэтому ему нужно понимать и то, и другое. Часто в DevOps приходят из системного администрирования или из бэкенда.</p>
+                  <p class="mb-0">Если начинаешь с нуля, иди по шагам: Linux и командная строка → сети → Git → Docker → CI/CD → Kubernetes и облака.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#q-devops-docker"
+                  aria-expanded="false"
+                  aria-controls="q-devops-docker"
+                >
+                  DevOps: зачем нужен Docker?
+                </button>
+              </h3>
+              <div id="q-devops-docker" class="accordion-collapse collapse" data-bs-parent="#faqDirections">
+                <div class="accordion-body">
+                  <p>Docker упаковывает программу вместе со всем, что ей нужно для работы: нужной версией языка, библиотеками и настройками. Такая «коробка» называется контейнером.</p>
+                  <p class="mb-0">Контейнер одинаково запускается на ноутбуке разработчика, на тестовом сервере и в облаке. Так пропадает проблема «а у меня на компьютере всё работало».</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer class="site-footer py-4 mt-5">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="h4 fw-bold text-white mb-1">Dev<span class="logo__accent">Path</span></p>
+          <p class="text-white mb-1">Лёгкий старт в IT — начни изучать уже сейчас.</p>
+          <p class="mb-0">Каждый программист когда-то написал свою первую строчку кода. Твоя — следующая.</p>
+        </div>
+        <a class="btn btn-red" href="directions.html">Начать путь</a>
+      </div>
+      <hr>
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+         <span>&copy; 2026 DevPath. Все права защищены.</span>
+        <div class="d-flex flex-wrap column-gap-3 row-gap-1">
+          <a class="site-footer__link" href="index.html">Главная</a>
+          <a class="site-footer__link" href="directions.html">Направления</a>
+          <a class="site-footer__link" href="reviews.html">Отзывы</a>
+          <a class="site-footer__link" href="about.html">О проекте</a>
+          <a class="site-footer__link" href="how.html">Как это работает</a>
+        </div> 
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== КНОПКА «НАВЕРХ» ========== -->
+  <a class="btn rounded-circle shadow to-top position-fixed bottom-0 end-0 m-4" href="#top" aria-label="Наверх">UP</a>
+
+  <!-- Bootstrap JS: нужен для меню на телефоне и accordion -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Свой JS: плавное появление разделов и счётчики -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>

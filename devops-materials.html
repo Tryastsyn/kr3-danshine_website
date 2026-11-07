@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Материалы: DevOps — DevPath</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Иконки языков программирования (Devicon) -->
+  <link href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css" rel="stylesheet">
+  <!-- Пиксельный шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Свои стили подключаем ПОСЛЕ Bootstrap -->
+  <link rel="stylesheet" href="styles/style.css?v=4">
+</head>
+<body id="top" class="d-flex flex-column min-vh-100">
+
+  <!-- ========== МЕНЮ (одинаковое на всех страницах) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold logo" href="index.html">Dev<span class="logo__accent">Path</span></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Открыть меню"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="directions.html">Направления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html">Отзывы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">О проекте</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="how.html">Как это работает</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow-1">
+
+    <!-- ========== ВСТУПЛЕНИЕ: картинка + окно с описанием ========== -->
+    <section class="container pt-4 pb-5">
+      <!-- Хлебные крошки -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb crumbs">
+          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+          <li class="breadcrumb-item"><a href="directions.html">Направления</a></li>
+          <li class="breadcrumb-item"><a href="devops.html">DevOps</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Материалы</li>
+        </ol>
+      </nav>
+
+      <div class="intro">
+        <img class="intro-img" src="images/cards/devops.png" alt="">
+        <div class="intro-body">
+          <h1 class="intro-title">Материалы</h1>
+          <p class="intro-text">
+            Главные темы по каждому языку и инструменту направления «DevOps» —
+            коротко и с примерами кода. Нажми на название, чтобы открыть темы.
+          </p>
+          <ul class="intro-menu">
+            <li><a href="#ch-linux">Linux</a></li>
+            <li><a href="#ch-docker">Docker</a></li>
+            <li><a href="#ch-gitlab">GitLab CI/CD</a></li>
+            <li><a href="#ch-kubernetes">Kubernetes</a></li>
+            <li><a href="#ch-terraform">Terraform</a></li>
+            <li><a href="#ch-prometheus">Prometheus</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ТЕМЫ ПО ЯЗЫКАМ И ИНСТРУМЕНТАМ ========== -->
+    <!-- Каждый язык — раскрывающаяся глава (Bootstrap accordion).
+         Вид глав берётся из класса .faq, как у «Частых вопросов» на главной -->
+    <section class="container py-4">
+      <div class="accordion faq">
+
+        <!-- Глава: Linux -->
+        <section class="accordion-item" id="ch-linux">
+          <h2 class="accordion-header">
+            <button class="accordion-button gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-linux" aria-expanded="true" aria-controls="topics-linux">
+              <i class="devicon-linux-plain lang-icon"></i>
+              <span class="next-title">Linux</span>
+            </button>
+          </h2>
+          <div id="topics-linux" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Навигация</h3>
+                    <p class="make-text mb-3"><code>pwd</code> показывает, где ты находишься, <code>ls</code> — что лежит в папке, <code>cd</code> — переходит в другую папку.</p>
+                    <pre class="lang-code"><code>pwd
+ls -la
+cd /var/log</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Файлы</h3>
+                    <p class="make-text mb-3">Команды для просмотра, копирования, переименования и удаления файлов.</p>
+                    <pre class="lang-code"><code>cat notes.txt
+cp notes.txt backup.txt
+mv backup.txt old.txt
+rm old.txt</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Процессы и службы</h3>
+                    <p class="make-text mb-3"><code>ps</code> показывает запущенные программы, <code>systemctl</code> управляет службами вроде веб-сервера.</p>
+                    <pre class="lang-code"><code>ps aux | grep nginx
+sudo systemctl restart nginx
+sudo systemctl status nginx</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Логи</h3>
+                    <p class="make-text mb-3">Логи помогают понять, почему сервис упал. <code>journalctl</code> показывает журнал службы.</p>
+                    <pre class="lang-code"><code>journalctl -u nginx --since today
+tail -f /var/log/nginx/error.log</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Docker -->
+        <section class="accordion-item" id="ch-docker">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-docker" aria-expanded="false" aria-controls="topics-docker">
+              <i class="devicon-docker-plain lang-icon"></i>
+              <span class="next-title">Docker</span>
+            </button>
+          </h2>
+          <div id="topics-docker" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Образ и контейнер</h3>
+                    <p class="make-text mb-3">Образ — шаблон приложения, контейнер — запущенная копия образа. Готовые образы берут с Docker Hub.</p>
+                    <pre class="lang-code"><code>docker pull nginx
+docker run -d -p 8080:80 nginx</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Dockerfile</h3>
+                    <p class="make-text mb-3">Рецепт сборки своего образа: на чём основан, какие файлы скопировать, какую команду запустить.</p>
+                    <pre class="lang-code"><code>FROM python:3.12-slim
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+CMD ["python", "app.py"]</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Сборка и запуск</h3>
+                    <p class="make-text mb-3"><code>build</code> собирает образ из Dockerfile, <code>run</code> запускает контейнер.</p>
+                    <pre class="lang-code"><code>docker build -t my-app .
+docker run --name my-container -p 8000:8000 my-app</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Управление контейнерами</h3>
+                    <p class="make-text mb-3">Посмотреть запущенные контейнеры, их логи и остановить.</p>
+                    <pre class="lang-code"><code>docker ps
+docker logs my-container
+docker stop my-container</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Docker Compose</h3>
+                    <p class="make-text mb-3">Запускает сразу несколько контейнеров, например приложение и базу данных, по описанию в одном файле.</p>
+                    <pre class="lang-code"><code>services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: example</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: GitLab CI/CD -->
+        <section class="accordion-item" id="ch-gitlab">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-gitlab" aria-expanded="false" aria-controls="topics-gitlab">
+              <i class="devicon-gitlab-plain lang-icon"></i>
+              <span class="next-title">GitLab CI/CD</span>
+            </button>
+          </h2>
+          <div id="topics-gitlab" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Файл .gitlab-ci.yml</h3>
+                    <p class="make-text mb-3">Конвейер описывают в файле в корне репозитория. <code>stages</code> задаёт порядок этапов.</p>
+                    <pre class="lang-code"><code>stages:
+  - test
+  - deploy</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Задачи</h3>
+                    <p class="make-text mb-3">Задача — набор команд на этапе. GitLab запускает их при каждом изменении кода.</p>
+                    <pre class="lang-code"><code>test:
+  stage: test
+  script:
+    - pytest</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Выкладка только из main</h3>
+                    <p class="make-text mb-3">Через <code>rules</code> задают, когда запускать задачу, например только для ветки main.</p>
+                    <pre class="lang-code"><code>deploy:
+  stage: deploy
+  script:
+    - ./deploy.sh
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Kubernetes -->
+        <section class="accordion-item" id="ch-kubernetes">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-kubernetes" aria-expanded="false" aria-controls="topics-kubernetes">
+              <i class="devicon-kubernetes-plain lang-icon"></i>
+              <span class="next-title">Kubernetes</span>
+            </button>
+          </h2>
+          <div id="topics-kubernetes" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Поды</h3>
+                    <p class="make-text mb-3">Под — минимальная единица Kubernetes: один или несколько контейнеров, которые работают вместе.</p>
+                    <pre class="lang-code"><code>kubectl get pods</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Deployment</h3>
+                    <p class="make-text mb-3">Описывает, какой образ запустить и в скольких копиях. Kubernetes сам следит, чтобы копий было столько.</p>
+                    <pre class="lang-code"><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: web
+          image: nginx:1.27</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Применение и масштабирование</h3>
+                    <p class="make-text mb-3"><code>apply</code> создаёт всё по описанию из файла, <code>scale</code> меняет число копий.</p>
+                    <pre class="lang-code"><code>kubectl apply -f deployment.yaml
+kubectl scale deployment my-app --replicas=5</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Service</h3>
+                    <p class="make-text mb-3">Даёт подам постоянный адрес внутри кластера, даже когда сами поды пересоздаются.</p>
+                    <pre class="lang-code"><code>apiVersion: v1
+kind: Service
+metadata:
+  name: my-app
+spec:
+  selector:
+    app: my-app
+  ports:
+    - port: 80</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Terraform -->
+        <section class="accordion-item" id="ch-terraform">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-terraform" aria-expanded="false" aria-controls="topics-terraform">
+              <i class="devicon-terraform-plain lang-icon"></i>
+              <span class="next-title">Terraform</span>
+            </button>
+          </h2>
+          <div id="topics-terraform" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Ресурсы</h3>
+                    <p class="make-text mb-3">Сервер, сеть или база в облаке описываются блоком <code>resource</code>.</p>
+                    <pre class="lang-code"><code>resource "aws_instance" "web" {
+  ami           = "ami-12345678"
+  instance_type = "t3.micro"
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Главные команды</h3>
+                    <p class="make-text mb-3"><code>init</code> готовит проект, <code>plan</code> показывает, что изменится, <code>apply</code> применяет изменения.</p>
+                    <pre class="lang-code"><code>terraform init
+terraform plan
+terraform apply</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Переменные</h3>
+                    <p class="make-text mb-3">Повторяющиеся значения выносят в переменные.</p>
+                    <pre class="lang-code"><code>variable "region" {
+  default = "eu-central-1"
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Prometheus -->
+        <section class="accordion-item" id="ch-prometheus">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-prometheus" aria-expanded="false" aria-controls="topics-prometheus">
+              <i class="devicon-prometheus-plain lang-icon"></i>
+              <span class="next-title">Prometheus</span>
+            </button>
+          </h2>
+          <div id="topics-prometheus" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Метрики</h3>
+                    <p class="make-text mb-3">Метрика — число, которое сервис отдаёт для наблюдения, например сколько запросов он обработал.</p>
+                    <pre class="lang-code"><code>http_requests_total{method="GET", status="200"} 1027</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Запросы PromQL</h3>
+                    <p class="make-text mb-3">На языке PromQL считают, например, сколько ошибок 500 приходит в секунду за последние 5 минут.</p>
+                    <pre class="lang-code"><code>rate(http_requests_total{status="500"}[5m])</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Оповещения</h3>
+                    <p class="make-text mb-3">Правило оповещения срабатывает, если условие держится дольше заданного времени.</p>
+                    <pre class="lang-code"><code>groups:
+  - name: app
+    rules:
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status="500"}[5m]) &gt; 1
+        for: 5m</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer class="site-footer py-4 mt-5">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="h4 fw-bold text-white mb-1">Dev<span class="logo__accent">Path</span></p>
+          <p class="text-white mb-1">Лёгкий старт в IT — начни изучать уже сейчас.</p>
+          <p class="mb-0">Каждый программист когда-то написал свою первую строчку кода. Твоя — следующая.</p>
+        </div>
+        <a class="btn btn-red" href="directions.html">Начать путь</a>
+      </div>
+      <hr>
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+         <span>&copy; 2026 DevPath. Все права защищены.</span>
+        <div class="d-flex flex-wrap column-gap-3 row-gap-1">
+          <a class="site-footer__link" href="index.html">Главная</a>
+          <a class="site-footer__link" href="directions.html">Направления</a>
+          <a class="site-footer__link" href="reviews.html">Отзывы</a>
+          <a class="site-footer__link" href="about.html">О проекте</a>
+          <a class="site-footer__link" href="how.html">Как это работает</a>
+        </div> 
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== КНОПКА «НАВЕРХ» ========== -->
+  <a class="btn rounded-circle shadow to-top position-fixed bottom-0 end-0 m-4" href="#top" aria-label="Наверх">UP</a>
+
+  <!-- Bootstrap JS: нужен для меню на телефоне и раскрытия глав -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Свой JS: плавное появление разделов и счётчики -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Направления — DevPath</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Иконки языков программирования (Devicon) -->
+  <link href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css" rel="stylesheet">
+  <!-- Пиксельный шрифт для карточек -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Свои стили подключаем ПОСЛЕ Bootstrap -->
+  <link rel="stylesheet" href="styles/style.css?v=4">
+</head>
+<body id="top" class="d-flex flex-column min-vh-100">
+
+  <!-- ========== МЕНЮ (одинаковое на всех страницах) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold logo" href="index.html">Dev<span class="logo__accent">Path</span></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Открыть меню"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="directions.html">Направления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html">Отзывы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">О проекте</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="how.html">Как это работает</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow-1">
+
+    <!-- ========== НАПРАВЛЕНИЯ ========== -->
+    <section class="pt-4 pb-5">
+      <div class="container-fluid px-3 px-lg-5">
+        <!-- Хлебные крошки -->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb crumbs">
+            <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Направления</li>
+          </ol>
+        </nav>
+
+        <!-- Заголовок + Тьмуша с репликой -->
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-4 mb-4">
+          <div>
+            <span class="section-label">8 направлений</span>
+            <h1 class="h2 fw-bold mt-3 mb-2">Что ты хочешь создавать?</h1>
+            <p class="directions__text mb-0">Выбери направление — и Тьмуша покажет, с чего начать.</p>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <div class="bubble bubble--right phrase" data-phrases="directions">Я пока не определилась… А ты?</div>
+            <img class="mascot mascot--small" src="images/ada.png" alt="">
+          </div>
+        </div>
+
+        <!-- Фильтр: кнопка показывает только направления своей группы (код в scripts/main.js) -->
+        <p class="directions__text mb-2">Что тебе интереснее?</p>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <button class="btn btn-outline-pink active" type="button" data-filter="all">Все</button>
+          <button class="btn btn-outline-pink" type="button" data-filter="games">Игры</button>
+          <button class="btn btn-outline-pink" type="button" data-filter="web">Сайты и приложения</button>
+          <button class="btn btn-outline-pink" type="button" data-filter="data">Данные и ИИ</button>
+          <button class="btn btn-outline-pink" type="button" data-filter="security">Безопасность и серверы</button>
+        </div>
+
+        <!-- Карточки: у всех одинаковые классы, отличаются только картинка и иконки.
+             data-group — группа для фильтра -->
+        <div class="row g-4">
+
+          <!-- Карточка: Разработка игр -->
+          <div class="col-12 col-sm-6 col-xl-3" data-group="games">
+            <div class="dir-card">
+              <h2 class="dir-title">Разработка игр</h2>
+              <img class="dir-img" src="images/cards/gamedev.png" alt="">
+              <p class="dir-text">Компьютерные и мобильные игры: игровая логика, физика, графика.</p>
+              <div class="dir-icons">
+                <i class="devicon-csharp-plain" title="C#"></i>
+                <i class="devicon-cplusplus-plain" title="C++"></i>
+                <i class="devicon-unity-plain" title="Unity"></i>
+                <i class="devicon-unrealengine-original" title="Unreal Engine"></i>
+              </div>
+              <a class="dir-btn" href="gamedev.html">Выбрать</a>
+            </div>
+          </div>
+
+          <!-- Карточка: Фронтенд -->
+          <div class="col-12 col-sm-6 col-xl-3" data-group="web">
+            <div class="dir-card">
+              <h2 class="dir-title">Фронтенд</h2>
+              <img class="dir-img" src="images/cards/frontend.png" alt="">
+              <p class="dir-text">Сайты и интерфейсы, которые пользователь видит в браузере.</p>
+              <div class="dir-icons">
+                <i class="devicon-html5-plain" title="HTML"></i>
+                <i class="devicon-css3-plain" title="CSS"></i>
+                <i class="devicon-javascript-plain" title="JavaScript"></i>
+                <i class="devicon-react-original" title="React"></i>
+              </div>
+              <a class="dir-btn" href="frontend.html">Выбрать</a>
+            </div>
+          </div>
+
+          <!-- Карточка: Бэкенд -->
+          <div class="col-12 col-sm-6 col-xl-3" data-group="web">
+            <div class="dir-card">
+              <h2 class="dir-title">Бэкенд</h2>
+              <img class="dir-img" src="images/cards/backend.png" alt="">
+              <p class="dir-text">Серверная часть сайтов: логика, базы данных, API.</p>
+              <div class="dir-icons">
+                <i class="devicon-python-plain" title="Python"></i>
+                <i class="devicon-java-plain" title="Java"></i>
+                <i class="devicon-go-plain" title="Go"></i>
+                <i class="devicon-postgresql-plain" title="PostgreSQL"></i>
+              </div>
+              <a class="dir-btn" href="backend.html">Выбрать</a>
+            </div>
+          </div>
+
+          <!-- Карточка: ИИ и машинное обучение -->
+          <div class="col-12 col-sm-6 col-xl-3" data-group="data">
+            <div class="dir-card">
+              <h2 class="dir-title">ИИ и машинное обучение</h2>
+              <img class="dir-img" src="images/cards/ai.png" alt="">
+              <p class="dir-text">Нейросети и модели, которые учатся на данных.</p>
+              <div class="dir-icons">
+                <i class="devicon-python-plain" title="Python"></i>
+                <i class="devicon-numpy-plain" title="NumPy"></i>
+                <i class="devicon-pytorch-original" title="PyTorch"></i>
+                <i class="devicon-jupyter-plain" title="Jupyter"></i>
+              </div>
+              <a class="dir-btn" href="ai.html">Выбрать</a>
+            </div>
+          </div>
+
+          <!-- Карточка: Мобильная разработка -->
+          <div class="col-12 col-sm-6 col-xl-3" data-group="web">
+            <div class="dir-card">
+              <h2 class="dir-title">Мобильная разработка</h2>
+              <img class="dir-img" src="images/cards/mobile.png" alt="">
+              <p class="dir-text">Приложения для смартфонов на Android и iOS.</p>
+              <div class="dir-icons">
+                <i class="devicon-kotlin-plain" title="Kotlin"></i>
+                <i class="devicon-swift-plain" title="Swift"></i>
+                <i class="devicon-flutter-plain" title="Flutter"></i>
+                <i class="devicon-android-plain" title="Android"></i>
+              </div>
+              <a class="dir-btn" href="mobile.html">Выбрать</a>
+            </div>
+          </div>
+
+          <!-- Карточка: Анализ данных -->
+          <div class="col-12 col-sm-6 col-xl-3" data-group="data">
+            <div class="dir-card">
+              <h2 class="dir-title">Анализ данных</h2>
+              <img class="dir-img" src="images/cards/data.png" alt="">
+              <p class="dir-text">Сбор и обработка данных, отчёты и выводы для бизнеса.</p>
+              <div class="dir-icons">
+                <i class="devicon-postgresql-plain" title="SQL (PostgreSQL)"></i>
+                <i class="devicon-python-plain" title="Python"></i>
+                <i class="devicon-pandas-plain" title="pandas"></i>
+                <i class="devicon-jupyter-plain" title="Jupyter"></i>
+              </div>
+              <a class="dir-btn" href="data.html">Выбрать</a>
+            </div>
+          </div>
+
+          <!-- Карточка: Кибербезопасность -->
+          <div class="col-12 col-sm-6 col-xl-3" data-group="security">
+            <div class="dir-card">
+              <h2 class="dir-title">Кибербезопасность</h2>
+              <img class="dir-img" src="images/cards/security.png" alt="">
+              <p class="dir-text">Защита систем и данных от взломов и утечек.</p>
+              <div class="dir-icons">
+                <i class="devicon-linux-plain" title="Linux"></i>
+                <i class="devicon-python-plain" title="Python"></i>
+                <i class="devicon-bash-plain" title="Bash"></i>
+                <i class="devicon-kalilinux-plain" title="Kali Linux"></i>
+              </div>
+              <a class="dir-btn" href="security.html">Выбрать</a>
+            </div>
+          </div>
+
+          <!-- Карточка: DevOps -->
+          <div class="col-12 col-sm-6 col-xl-3" data-group="security">
+            <div class="dir-card">
+              <h2 class="dir-title">DevOps</h2>
+              <img class="dir-img" src="images/cards/devops.png" alt="">
+              <p class="dir-text">Автоматизация сборки, тестов и развёртывания, серверы и облака.</p>
+              <div class="dir-icons">
+                <i class="devicon-linux-plain" title="Linux"></i>
+                <i class="devicon-docker-plain" title="Docker"></i>
+                <i class="devicon-gitlab-plain" title="GitLab CI/CD"></i>
+                <i class="devicon-kubernetes-plain" title="Kubernetes"></i>
+              </div>
+              <a class="dir-btn" href="devops.html">Выбрать</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer class="site-footer py-4 mt-5">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="h4 fw-bold text-white mb-1">Dev<span class="logo__accent">Path</span></p>
+          <p class="text-white mb-1">Лёгкий старт в IT — начни изучать уже сейчас.</p>
+          <p class="mb-0">Каждый программист когда-то написал свою первую строчку кода. Твоя — следующая.</p>
+        </div>
+        <a class="btn btn-red" href="directions.html">Начать путь</a>
+      </div>
+      <hr>
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+        <span>&copy; 2026 DevPath. Все права защищены.</span>
+        <div class="d-flex flex-wrap column-gap-3 row-gap-1">
+          <a class="site-footer__link" href="index.html">Главная</a>
+          <a class="site-footer__link" href="directions.html">Направления</a>
+          <a class="site-footer__link" href="reviews.html">Отзывы</a>
+          <a class="site-footer__link" href="about.html">О проекте</a>
+          <a class="site-footer__link" href="how.html">Как это работает</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== КНОПКА «НАВЕРХ» ========== -->
+  <a class="btn rounded-circle shadow to-top position-fixed bottom-0 end-0 m-4" href="#top" aria-label="Наверх">UP</a>
+
+  <!-- Bootstrap JS: нужен для меню на телефоне и accordion -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Свой JS: плавное появление разделов и счётчики -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>

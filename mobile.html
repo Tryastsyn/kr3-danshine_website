@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мобильная разработка — DevPath</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Иконки языков программирования (Devicon) -->
+  <link href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css" rel="stylesheet">
+  <!-- Пиксельный шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Свои стили подключаем ПОСЛЕ Bootstrap -->
+  <link rel="stylesheet" href="styles/style.css?v=4">
+</head>
+<body id="top" class="d-flex flex-column min-vh-100">
+
+  <!-- ========== МЕНЮ (одинаковое на всех страницах) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold logo" href="index.html">Dev<span class="logo__accent">Path</span></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Открыть меню"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="directions.html">Направления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html">Отзывы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">О проекте</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="how.html">Как это работает</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow-1">
+
+    <!-- ========== ВСТУПЛЕНИЕ: картинка + окно с описанием ========== -->
+    <section class="container pt-4 pb-5">
+      <!-- Хлебные крошки -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb crumbs">
+          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+          <li class="breadcrumb-item"><a href="directions.html">Направления</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Мобильная разработка</li>
+        </ol>
+      </nav>
+
+      <div class="intro">
+        <img class="intro-img" src="images/cards/mobile.png" alt="">
+        <div class="intro-body">
+          <h1 class="intro-title">Мобильная разработка</h1>
+          <p class="intro-text">
+            Мобильная разработка — это создание приложений для смартфонов и планшетов на Android и iOS.
+            Мобильный разработчик делает экраны приложения, работу с камерой, картами и уведомлениями,
+            а потом публикует приложение в Google Play и App Store.
+          </p>
+          <ul class="intro-menu">
+            <li><a href="#make">Что создают</a></li>
+            <li><a href="#langs">Языки и инструменты</a></li>
+            <li><a href="mobile-roadmap.html">Дорожная карта</a></li>
+            <li><a href="mobile-materials.html">Материалы</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ЧТО СОЗДАЮТ ========== -->
+    <section id="make" class="container py-5">
+      <span class="section-label">Что создают</span>
+      <h2 class="fw-bold mt-3 mb-4">Что делают мобильные разработчики</h2>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="make-card">
+            <h3 class="make-title">Приложения магазинов и банков</h3>
+            <p class="make-text">Каталог, корзина, оплата и личный кабинет в телефоне.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="make-card">
+            <h3 class="make-title">Соцсети и мессенджеры</h3>
+            <p class="make-text">Лента, чаты, звонки и push-уведомления.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="make-card">
+            <h3 class="make-title">Сервисы с картами</h3>
+            <p class="make-text">Такси, доставка, навигация и поиск мест рядом.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="make-card">
+            <h3 class="make-title">Фитнес и здоровье</h3>
+            <p class="make-text">Трекеры шагов, сна и тренировок на данных датчиков телефона.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ЯЗЫКИ И ИНСТРУМЕНТЫ ========== -->
+    <section id="langs" class="container py-5">
+      <span class="section-label">Инвентарь</span>
+      <h2 class="fw-bold mt-3 mb-2">Языки и инструменты</h2>
+      <p class="directions__text mb-4">Выбери платформу: Kotlin для Android, Swift для iPhone или Flutter, чтобы сразу для обеих. Нажми на ячейку, чтобы узнать подробности.</p>
+
+      <!-- Каждая ячейка открывает своё модальное окно (окна — в конце страницы) -->
+      <div class="inventory">
+        <button class="slot" type="button" data-bs-toggle="modal" data-bs-target="#modal-kotlin">
+          <i class="devicon-kotlin-plain"></i>
+          <span class="slot-name">Kotlin</span>
+        </button>
+
+        <button class="slot" type="button" data-bs-toggle="modal" data-bs-target="#modal-swift">
+          <i class="devicon-swift-plain"></i>
+          <span class="slot-name">Swift</span>
+        </button>
+
+        <button class="slot" type="button" data-bs-toggle="modal" data-bs-target="#modal-dart">
+          <i class="devicon-dart-plain"></i>
+          <span class="slot-name">Dart</span>
+        </button>
+
+        <button class="slot" type="button" data-bs-toggle="modal" data-bs-target="#modal-flutter">
+          <i class="devicon-flutter-plain"></i>
+          <span class="slot-name">Flutter</span>
+        </button>
+
+        <button class="slot" type="button" data-bs-toggle="modal" data-bs-target="#modal-androidstudio">
+          <i class="devicon-androidstudio-plain"></i>
+          <span class="slot-name">Android Studio</span>
+        </button>
+
+        <button class="slot" type="button" data-bs-toggle="modal" data-bs-target="#modal-xcode">
+          <i class="devicon-xcode-plain"></i>
+          <span class="slot-name">Xcode</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ========== КУДА ИДТИ ДАЛЬШЕ ========== -->
+    <section class="container py-5">
+      <div class="text-center mb-4">
+        <span class="section-label">Что дальше</span>
+        <h2 class="fw-bold mt-3">Куда идти после знакомства</h2>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          <a class="next-card" href="mobile-materials.html">
+            <span class="next-title">Материалы</span>
+            <span class="next-text">Документация, статьи и курсы по каждому языку и инструменту.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer class="site-footer py-4 mt-5">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="h4 fw-bold text-white mb-1">Dev<span class="logo__accent">Path</span></p>
+          <p class="text-white mb-1">Лёгкий старт в IT — начни изучать уже сейчас.</p>
+          <p class="mb-0">Каждый программист когда-то написал свою первую строчку кода. Твоя — следующая.</p>
+        </div>
+        <a class="btn btn-red" href="directions.html">Начать путь</a>
+      </div>
+      <hr>
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+         <span>&copy; 2026 DevPath. Все права защищены.</span>
+        <div class="d-flex flex-wrap column-gap-3 row-gap-1">
+          <a class="site-footer__link" href="index.html">Главная</a>
+          <a class="site-footer__link" href="directions.html">Направления</a>
+          <a class="site-footer__link" href="reviews.html">Отзывы</a>
+          <a class="site-footer__link" href="about.html">О проекте</a>
+          <a class="site-footer__link" href="how.html">Как это работает</a>
+        </div> 
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== МОДАЛЬНЫЕ ОКНА ЯЗЫКОВ ========== -->
+  <!-- Окно: Kotlin -->
+  <div class="modal fade lang-modal" id="modal-kotlin" tabindex="-1" aria-labelledby="modal-kotlin-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="devicon-kotlin-plain lang-icon"></i>
+          <h2 class="modal-title" id="modal-kotlin-title">Kotlin</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p class="lang-type">Язык программирования</p>
+          <p class="lang-level">Сложность: <span>■■□</span> средне</p>
+          <p>Основной язык для Android-приложений: код на нём короче, чем на Java, и в нём меньше ошибок с пустыми значениями.</p>
+          <p class="lang-code-title">Пример кода</p>
+          <pre class="lang-code"><code>fun main() {
+    val name = "Тьмуша"
+    println("Привет, $name!")
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Окно: Swift -->
+  <div class="modal fade lang-modal" id="modal-swift" tabindex="-1" aria-labelledby="modal-swift-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="devicon-swift-plain lang-icon"></i>
+          <h2 class="modal-title" id="modal-swift-title">Swift</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p class="lang-type">Язык программирования</p>
+          <p class="lang-level">Сложность: <span>■■□</span> средне</p>
+          <p>Язык Apple для приложений на iPhone, iPad и Mac.</p>
+          <p class="lang-code-title">Пример кода</p>
+          <pre class="lang-code"><code>let name = "Тьмуша"
+print("Привет, \(name)!")</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Окно: Dart -->
+  <div class="modal fade lang-modal" id="modal-dart" tabindex="-1" aria-labelledby="modal-dart-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="devicon-dart-plain lang-icon"></i>
+          <h2 class="modal-title" id="modal-dart-title">Dart</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p class="lang-type">Язык программирования</p>
+          <p class="lang-level">Сложность: <span>■□□</span> легко</p>
+          <p>Язык, на котором пишут приложения во Flutter. Похож на JavaScript и Java.</p>
+          <p class="lang-code-title">Пример кода</p>
+          <pre class="lang-code"><code>void main() {
+  var apps = ['Карты', 'Музыка', 'Почта'];
+  for (var app in apps) {
+    print(app);
+  }
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Окно: Flutter -->
+  <div class="modal fade lang-modal" id="modal-flutter" tabindex="-1" aria-labelledby="modal-flutter-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="devicon-flutter-plain lang-icon"></i>
+          <h2 class="modal-title" id="modal-flutter-title">Flutter</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p class="lang-type">Фреймворк</p>
+          <p class="lang-level">Сложность: <span>■■□</span> средне</p>
+          <p>Позволяет собрать приложение сразу для Android и iOS из одного кода.</p>
+          <p class="lang-code-title">Пример кода</p>
+          <pre class="lang-code"><code>import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MaterialApp(
+    home: Scaffold(
+      body: Center(child: Text('Привет!')),
+    ),
+  ));
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Окно: Android Studio -->
+  <div class="modal fade lang-modal" id="modal-androidstudio" tabindex="-1" aria-labelledby="modal-androidstudio-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="devicon-androidstudio-plain lang-icon"></i>
+          <h2 class="modal-title" id="modal-androidstudio-title">Android Studio</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p class="lang-type">Среда разработки</p>
+          <p class="lang-level">Сложность: <span>■□□</span> легко</p>
+          <p>Официальная программа для Android-приложений: редактор кода, конструктор экранов и эмулятор телефона.</p>
+          <p class="lang-code-title">Пример кода</p>
+          <pre class="lang-code"><code>&lt;TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Привет!" /&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Окно: Xcode -->
+  <div class="modal fade lang-modal" id="modal-xcode" tabindex="-1" aria-labelledby="modal-xcode-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="devicon-xcode-plain lang-icon"></i>
+          <h2 class="modal-title" id="modal-xcode-title">Xcode</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p class="lang-type">Среда разработки</p>
+          <p class="lang-level">Сложность: <span>■□□</span> легко</p>
+          <p>Программа Apple для создания приложений под iPhone. Работает только на Mac.</p>
+          <p class="lang-code-title">Пример кода</p>
+          <pre class="lang-code"><code>import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        Text("Привет!")
+    }
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== КНОПКА «НАВЕРХ» ========== -->
+  <a class="btn rounded-circle shadow to-top position-fixed bottom-0 end-0 m-4" href="#top" aria-label="Наверх">UP</a>
+
+  <!-- Bootstrap JS: нужен для меню на телефоне и модальных окон -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Свой JS: плавное появление разделов и счётчики -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>

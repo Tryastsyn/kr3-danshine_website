@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Материалы: Фронтенд — DevPath</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Иконки языков программирования (Devicon) -->
+  <link href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css" rel="stylesheet">
+  <!-- Пиксельный шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Свои стили подключаем ПОСЛЕ Bootstrap -->
+  <link rel="stylesheet" href="styles/style.css?v=4">
+</head>
+<body id="top" class="d-flex flex-column min-vh-100">
+
+  <!-- ========== МЕНЮ (одинаковое на всех страницах) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold logo" href="index.html">Dev<span class="logo__accent">Path</span></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Открыть меню"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="directions.html">Направления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html">Отзывы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">О проекте</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="how.html">Как это работает</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow-1">
+
+    <!-- ========== ВСТУПЛЕНИЕ: картинка + окно с описанием ========== -->
+    <section class="container pt-4 pb-5">
+      <!-- Хлебные крошки -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb crumbs">
+          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+          <li class="breadcrumb-item"><a href="directions.html">Направления</a></li>
+          <li class="breadcrumb-item"><a href="frontend.html">Фронтенд</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Материалы</li>
+        </ol>
+      </nav>
+
+      <div class="intro">
+        <img class="intro-img" src="images/cards/frontend.png" alt="">
+        <div class="intro-body">
+          <h1 class="intro-title">Материалы</h1>
+          <p class="intro-text">
+            Главные темы по каждому языку и инструменту направления «Фронтенд» —
+            коротко и с примерами кода. Нажми на название, чтобы открыть темы.
+          </p>
+          <ul class="intro-menu">
+            <li><a href="#ch-html">HTML</a></li>
+            <li><a href="#ch-css">CSS</a></li>
+            <li><a href="#ch-js">JavaScript</a></li>
+            <li><a href="#ch-git">Git</a></li>
+            <li><a href="#ch-ts">TypeScript</a></li>
+            <li><a href="#ch-react">React</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ТЕМЫ ПО ЯЗЫКАМ И ИНСТРУМЕНТАМ ========== -->
+    <!-- Каждый язык — раскрывающаяся глава (Bootstrap accordion).
+         Вид глав берётся из класса .faq, как у «Частых вопросов» на главной -->
+    <section class="container py-4">
+      <div class="accordion faq">
+
+        <!-- Глава: HTML -->
+        <section class="accordion-item" id="ch-html">
+          <h2 class="accordion-header">
+            <button class="accordion-button gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-html" aria-expanded="true" aria-controls="topics-html">
+              <i class="devicon-html5-plain lang-icon"></i>
+              <span class="next-title">HTML</span>
+            </button>
+          </h2>
+          <div id="topics-html" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Структура страницы</h3>
+                    <p class="make-text mb-3">Каждая страница начинается с <code>&lt;!DOCTYPE html&gt;</code>. В <code>&lt;head&gt;</code> лежат настройки и название вкладки, в <code>&lt;body&gt;</code> — всё, что видно на экране.</p>
+                    <pre class="lang-code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+  &lt;title&gt;Моя страница&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Привет!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Заголовки и текст</h3>
+                    <p class="make-text mb-3">Заголовки от <code>&lt;h1&gt;</code> до <code>&lt;h6&gt;</code> показывают важность, <code>&lt;p&gt;</code> — обычный абзац, <code>&lt;strong&gt;</code> выделяет важное.</p>
+                    <pre class="lang-code"><code>&lt;h1&gt;Главный заголовок&lt;/h1&gt;
+&lt;h2&gt;Подзаголовок&lt;/h2&gt;
+&lt;p&gt;Абзац с &lt;strong&gt;важным&lt;/strong&gt; словом.&lt;/p&gt;</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Ссылки и картинки</h3>
+                    <p class="make-text mb-3"><code>&lt;a&gt;</code> ведёт на другую страницу по адресу из <code>href</code>. <code>&lt;img&gt;</code> показывает картинку из <code>src</code>, а <code>alt</code> описывает её словами.</p>
+                    <pre class="lang-code"><code>&lt;a href="about.html"&gt;Обо мне&lt;/a&gt;
+&lt;img src="images/cat.png" alt="Рыжий кот"&gt;</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Списки</h3>
+                    <p class="make-text mb-3"><code>&lt;ul&gt;</code> — список с точками, <code>&lt;ol&gt;</code> — нумерованный. Каждый пункт пишут в <code>&lt;li&gt;</code>.</p>
+                    <pre class="lang-code"><code>&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Формы</h3>
+                    <p class="make-text mb-3">Собирают данные от пользователя: <code>&lt;input&gt;</code> — поле ввода, <code>&lt;label&gt;</code> — подпись к нему, <code>&lt;button&gt;</code> — кнопка.</p>
+                    <pre class="lang-code"><code>&lt;form&gt;
+  &lt;label for="email"&gt;Почта&lt;/label&gt;
+  &lt;input id="email" type="email"&gt;
+  &lt;button type="submit"&gt;Отправить&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: CSS -->
+        <section class="accordion-item" id="ch-css">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-css" aria-expanded="false" aria-controls="topics-css">
+              <i class="devicon-css3-plain lang-icon"></i>
+              <span class="next-title">CSS</span>
+            </button>
+          </h2>
+          <div id="topics-css" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Селекторы</h3>
+                    <p class="make-text mb-3">Говорят, к чему применить стиль: к тегу, к классу (через точку) или к элементу с id (через решётку).</p>
+                    <pre class="lang-code"><code>p { color: gray; }
+.card { border: 2px solid pink; }
+#title { font-size: 40px; }</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Цвета и шрифты</h3>
+                    <p class="make-text mb-3"><code>color</code> — цвет текста, <code>background</code> — фон, <code>font-family</code> и <code>font-size</code> — шрифт и его размер.</p>
+                    <pre class="lang-code"><code>body {
+  color: #f7f2f5;
+  background: #0d0b0e;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Блочная модель</h3>
+                    <p class="make-text mb-3">У каждого элемента есть внутренний отступ <code>padding</code>, рамка <code>border</code> и внешний отступ <code>margin</code>.</p>
+                    <pre class="lang-code"><code>.card {
+  padding: 20px;
+  border: 4px solid #f3d3e3;
+  margin-bottom: 16px;
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Flexbox</h3>
+                    <p class="make-text mb-3">Выстраивает элементы в ряд или в колонку и выравнивает их. Включается свойством <code>display: flex</code>.</p>
+                    <pre class="lang-code"><code>.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Тьмушаптивность</h3>
+                    <p class="make-text mb-3">Медиазапрос <code>@media</code> меняет стили на узких экранах, например на телефоне.</p>
+                    <pre class="lang-code"><code>@media (max-width: 575px) {
+  .menu {
+    flex-direction: column;
+  }
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: JavaScript -->
+        <section class="accordion-item" id="ch-js">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-js" aria-expanded="false" aria-controls="topics-js">
+              <i class="devicon-javascript-plain lang-icon"></i>
+              <span class="next-title">JavaScript</span>
+            </button>
+          </h2>
+          <div id="topics-js" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Переменные</h3>
+                    <p class="make-text mb-3"><code>let</code> — переменная, значение которой можно менять. <code>const</code> — постоянная: её значение задают один раз.</p>
+                    <pre class="lang-code"><code>let score = 0;
+score = 10;
+const city = "Москва";</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Типы данных</h3>
+                    <p class="make-text mb-3">Основные виды значений: строки, числа, логические значения, массивы и объекты.</p>
+                    <pre class="lang-code"><code>const text = "Привет";          // строка
+const age = 18;                 // число
+const isOnline = true;          // логическое
+const langs = ["HTML", "CSS"];  // массив
+const user = { name: "Гость" }; // объект</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Условия</h3>
+                    <p class="make-text mb-3"><code>if</code> выполняет код, только если условие верно, а <code>else</code> — если нет.</p>
+                    <pre class="lang-code"><code>if (age &gt;= 18) {
+  console.log("Взрослый");
+} else {
+  console.log("Подросток");
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Циклы</h3>
+                    <p class="make-text mb-3"><code>for</code> повторяет код нужное число раз, а <code>for...of</code> проходит по всем элементам массива.</p>
+                    <pre class="lang-code"><code>for (let i = 1; i &lt;= 3; i++) {
+  console.log("Шаг " + i);
+}
+
+for (const lang of langs) {
+  console.log(lang);
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Функции</h3>
+                    <p class="make-text mb-3">Кусок кода с именем, который можно вызывать много раз. <code>return</code> возвращает результат.</p>
+                    <pre class="lang-code"><code>function greet(name) {
+  return "Привет, " + name + "!";
+}
+
+console.log(greet("друг"));</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Работа со страницей</h3>
+                    <p class="make-text mb-3">JavaScript находит элементы на странице и реагирует на действия пользователя, например на клик.</p>
+                    <pre class="lang-code"><code>const button = document.querySelector(".btn");
+
+button.addEventListener("click", () =&gt; {
+  button.textContent = "Нажато!";
+});</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Git -->
+        <section class="accordion-item" id="ch-git">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-git" aria-expanded="false" aria-controls="topics-git">
+              <i class="devicon-git-plain lang-icon"></i>
+              <span class="next-title">Git</span>
+            </button>
+          </h2>
+          <div id="topics-git" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Новый репозиторий</h3>
+                    <p class="make-text mb-3">Команда <code>git init</code> говорит Git следить за папкой проекта.</p>
+                    <pre class="lang-code"><code>git init</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Коммит</h3>
+                    <p class="make-text mb-3">Снимок изменений с понятным описанием. Сначала файлы добавляют, потом сохраняют коммитом.</p>
+                    <pre class="lang-code"><code>git add .
+git commit -m "Добавил главную страницу"</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Ветки</h3>
+                    <p class="make-text mb-3">Отдельная линия работы: можно пробовать новое, не ломая основной код.</p>
+                    <pre class="lang-code"><code>git switch -c feature/menu
+git switch main</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">GitHub</h3>
+                    <p class="make-text mb-3"><code>push</code> отправляет коммиты в удалённый репозиторий, <code>pull</code> забирает оттуда чужие изменения.</p>
+                    <pre class="lang-code"><code>git push -u origin main
+git pull</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: TypeScript -->
+        <section class="accordion-item" id="ch-ts">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-ts" aria-expanded="false" aria-controls="topics-ts">
+              <i class="devicon-typescript-plain lang-icon"></i>
+              <span class="next-title">TypeScript</span>
+            </button>
+          </h2>
+          <div id="topics-ts" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Типы переменных</h3>
+                    <p class="make-text mb-3">После имени через двоеточие пишут тип. Если положить значение другого типа, TypeScript покажет ошибку.</p>
+                    <pre class="lang-code"><code>let age: number = 18;
+let city: string = "Москва";
+let isOnline: boolean = true;</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Типы в функциях</h3>
+                    <p class="make-text mb-3">Указывают, что функция принимает и что возвращает.</p>
+                    <pre class="lang-code"><code>function sum(a: number, b: number): number {
+  return a + b;
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Интерфейсы</h3>
+                    <p class="make-text mb-3">Описывают форму объекта: какие у него поля и каких они типов.</p>
+                    <pre class="lang-code"><code>interface User {
+  name: string;
+  age: number;
+}
+
+const user: User = { name: "Гость", age: 18 };</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Объединение типов</h3>
+                    <p class="make-text mb-3">Через черту <code>|</code> разрешают значению быть одного из нескольких типов.</p>
+                    <pre class="lang-code"><code>let id: number | string;
+id = 42;
+id = "abc-42";</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: React -->
+        <section class="accordion-item" id="ch-react">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-react" aria-expanded="false" aria-controls="topics-react">
+              <i class="devicon-react-original lang-icon"></i>
+              <span class="next-title">React</span>
+            </button>
+          </h2>
+          <div id="topics-react" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Компоненты</h3>
+                    <p class="make-text mb-3">Интерфейс собирают из функций-компонентов, которые возвращают разметку.</p>
+                    <pre class="lang-code"><code>function Hello() {
+  return &lt;h1&gt;Привет!&lt;/h1&gt;;
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">JSX</h3>
+                    <p class="make-text mb-3">Разметка прямо в JavaScript. Значения вставляют в фигурных скобках, а класс пишут как <code>className</code>.</p>
+                    <pre class="lang-code"><code>const name = "друг";
+const title = &lt;h2 className="title"&gt;Привет, {name}!&lt;/h2&gt;;</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Props</h3>
+                    <p class="make-text mb-3">Данные, которые компонент получает снаружи — как атрибуты у тега.</p>
+                    <pre class="lang-code"><code>function Card({ title }) {
+  return &lt;div className="card"&gt;{title}&lt;/div&gt;;
+}
+
+&lt;Card title="Фронтенд" /&gt;</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Состояние</h3>
+                    <p class="make-text mb-3">Хук <code>useState</code> хранит данные. Когда они меняются, компонент перерисовывается.</p>
+                    <pre class="lang-code"><code>const [count, setCount] = useState(0);</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">События</h3>
+                    <p class="make-text mb-3">Обработчики вроде <code>onClick</code> запускают код, когда пользователь что-то делает.</p>
+                    <pre class="lang-code"><code>&lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+  Нажали {count} раз
+&lt;/button&gt;</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer class="site-footer py-4 mt-5">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="h4 fw-bold text-white mb-1">Dev<span class="logo__accent">Path</span></p>
+          <p class="text-white mb-1">Лёгкий старт в IT — начни изучать уже сейчас.</p>
+          <p class="mb-0">Каждый программист когда-то написал свою первую строчку кода. Твоя — следующая.</p>
+        </div>
+        <a class="btn btn-red" href="directions.html">Начать путь</a>
+      </div>
+      <hr>
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+         <span>&copy; 2026 DevPath. Все права защищены.</span>
+        <div class="d-flex flex-wrap column-gap-3 row-gap-1">
+          <a class="site-footer__link" href="index.html">Главная</a>
+          <a class="site-footer__link" href="directions.html">Направления</a>
+          <a class="site-footer__link" href="reviews.html">Отзывы</a>
+          <a class="site-footer__link" href="about.html">О проекте</a>
+          <a class="site-footer__link" href="how.html">Как это работает</a>
+        </div> 
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== КНОПКА «НАВЕРХ» ========== -->
+  <a class="btn rounded-circle shadow to-top position-fixed bottom-0 end-0 m-4" href="#top" aria-label="Наверх">UP</a>
+
+  <!-- Bootstrap JS: нужен для меню на телефоне и раскрытия глав -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Свой JS: плавное появление разделов и счётчики -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>

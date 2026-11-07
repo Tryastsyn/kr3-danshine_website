@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Материалы: Анализ данных — DevPath</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Иконки языков программирования (Devicon) -->
+  <link href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css" rel="stylesheet">
+  <!-- Пиксельный шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Свои стили подключаем ПОСЛЕ Bootstrap -->
+  <link rel="stylesheet" href="styles/style.css?v=4">
+</head>
+<body id="top" class="d-flex flex-column min-vh-100">
+
+  <!-- ========== МЕНЮ (одинаковое на всех страницах) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold logo" href="index.html">Dev<span class="logo__accent">Path</span></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Открыть меню"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="directions.html">Направления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html">Отзывы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">О проекте</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="how.html">Как это работает</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow-1">
+
+    <!-- ========== ВСТУПЛЕНИЕ: картинка + окно с описанием ========== -->
+    <section class="container pt-4 pb-5">
+      <!-- Хлебные крошки -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb crumbs">
+          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+          <li class="breadcrumb-item"><a href="directions.html">Направления</a></li>
+          <li class="breadcrumb-item"><a href="data.html">Анализ данных</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Материалы</li>
+        </ol>
+      </nav>
+
+      <div class="intro">
+        <img class="intro-img" src="images/cards/data.png" alt="">
+        <div class="intro-body">
+          <h1 class="intro-title">Материалы</h1>
+          <p class="intro-text">
+            Главные темы по каждому языку и инструменту направления «Анализ данных» —
+            коротко и с примерами кода. Нажми на название, чтобы открыть темы.
+          </p>
+          <ul class="intro-menu">
+            <li><a href="#ch-sql">SQL</a></li>
+            <li><a href="#ch-python">Python</a></li>
+            <li><a href="#ch-pandas">pandas</a></li>
+            <li><a href="#ch-numpy">NumPy</a></li>
+            <li><a href="#ch-matplotlib">Matplotlib</a></li>
+            <li><a href="#ch-jupyter">Jupyter</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ТЕМЫ ПО ЯЗЫКАМ И ИНСТРУМЕНТАМ ========== -->
+    <!-- Каждый язык — раскрывающаяся глава (Bootstrap accordion).
+         Вид глав берётся из класса .faq, как у «Частых вопросов» на главной -->
+    <section class="container py-4">
+      <div class="accordion faq">
+
+        <!-- Глава: SQL -->
+        <section class="accordion-item" id="ch-sql">
+          <h2 class="accordion-header">
+            <button class="accordion-button gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-sql" aria-expanded="true" aria-controls="topics-sql">
+              <i class="devicon-postgresql-plain lang-icon"></i>
+              <span class="next-title">SQL</span>
+            </button>
+          </h2>
+          <div id="topics-sql" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Выборка</h3>
+                    <p class="make-text mb-3"><code>SELECT</code> достаёт данные, <code>WHERE</code> оставляет только нужные строки, <code>ORDER BY</code> сортирует.</p>
+                    <pre class="lang-code"><code>SELECT name, age
+FROM users
+WHERE age &gt;= 18
+ORDER BY age DESC;</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Первые строки</h3>
+                    <p class="make-text mb-3"><code>LIMIT</code> ограничивает число строк в ответе — удобно посмотреть, что лежит в таблице.</p>
+                    <pre class="lang-code"><code>SELECT *
+FROM orders
+LIMIT 10;</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Подсчёты</h3>
+                    <p class="make-text mb-3">Функции <code>COUNT</code>, <code>SUM</code> и <code>AVG</code> считают количество, сумму и среднее.</p>
+                    <pre class="lang-code"><code>SELECT COUNT(*)   AS orders_count,
+       SUM(total) AS revenue,
+       AVG(total) AS avg_check
+FROM orders;</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Группировка</h3>
+                    <p class="make-text mb-3"><code>GROUP BY</code> собирает строки в группы и считает итоги по каждой.</p>
+                    <pre class="lang-code"><code>SELECT city, COUNT(*) AS orders_count
+FROM orders
+GROUP BY city
+ORDER BY orders_count DESC;</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Связь таблиц</h3>
+                    <p class="make-text mb-3"><code>JOIN</code> соединяет строки двух таблиц по общему полю, например заказы и их покупателей.</p>
+                    <pre class="lang-code"><code>SELECT users.name, orders.total
+FROM orders
+JOIN users ON users.id = orders.user_id;</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Python -->
+        <section class="accordion-item" id="ch-python">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-python" aria-expanded="false" aria-controls="topics-python">
+              <i class="devicon-python-plain lang-icon"></i>
+              <span class="next-title">Python</span>
+            </button>
+          </h2>
+          <div id="topics-python" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Переменные</h3>
+                    <p class="make-text mb-3">Переменную создают, просто присвоив ей значение. Тип Python определит сам.</p>
+                    <pre class="lang-code"><code>name = "Гость"
+age = 18
+age = age + 1</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Типы данных</h3>
+                    <p class="make-text mb-3">Основные типы: строка, целое и дробное число, логическое значение, список и словарь.</p>
+                    <pre class="lang-code"><code>text = "Привет"            # str — строка
+count = 10                 # int — целое число
+price = 99.9               # float — дробное число
+is_online = True           # bool — логическое
+langs = ["Python", "SQL"]  # list — список
+user = {"name": "Гость"}   # dict — словарь</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Условия</h3>
+                    <p class="make-text mb-3"><code>if</code>, <code>elif</code> и <code>else</code> выбирают, какой код выполнить. Блоки выделяют отступом в 4 пробела.</p>
+                    <pre class="lang-code"><code>if age &gt;= 18:
+    print("Взрослый")
+elif age &gt;= 14:
+    print("Подросток")
+else:
+    print("Ребёнок")</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Циклы</h3>
+                    <p class="make-text mb-3"><code>for</code> проходит по элементам списка или по числам из <code>range</code>, <code>while</code> повторяет код, пока условие верно.</p>
+                    <pre class="lang-code"><code>for lang in langs:
+    print(lang)
+
+for i in range(3):
+    print("Шаг", i)
+
+n = 3
+while n &gt; 0:
+    n -= 1</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Функции</h3>
+                    <p class="make-text mb-3"><code>def</code> создаёт функцию, <code>return</code> возвращает результат.</p>
+                    <pre class="lang-code"><code>def greet(name):
+    return f"Привет, {name}!"
+
+print(greet("друг"))</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: pandas -->
+        <section class="accordion-item" id="ch-pandas">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-pandas" aria-expanded="false" aria-controls="topics-pandas">
+              <i class="devicon-pandas-plain lang-icon"></i>
+              <span class="next-title">pandas</span>
+            </button>
+          </h2>
+          <div id="topics-pandas" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Таблица DataFrame</h3>
+                    <p class="make-text mb-3">Главный объект pandas — таблица со строками и именованными столбцами.</p>
+                    <pre class="lang-code"><code>import pandas as pd
+
+df = pd.DataFrame({
+    "city": ["Москва", "Казань"],
+    "score": [90, 75],
+})</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Загрузка данных</h3>
+                    <p class="make-text mb-3">Таблицу можно прочитать из CSV или Excel. <code>head()</code> показывает первые строки.</p>
+                    <pre class="lang-code"><code>df = pd.read_csv("data.csv")
+print(df.head())</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Фильтрация</h3>
+                    <p class="make-text mb-3">В квадратных скобках пишут условие — останутся только подходящие строки.</p>
+                    <pre class="lang-code"><code>good = df[df["score"] &gt; 80]</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Группировка</h3>
+                    <p class="make-text mb-3"><code>groupby</code> считает итоги по группам, например средний балл по каждому городу.</p>
+                    <pre class="lang-code"><code>print(df.groupby("city")["score"].mean())</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: NumPy -->
+        <section class="accordion-item" id="ch-numpy">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-numpy" aria-expanded="false" aria-controls="topics-numpy">
+              <i class="devicon-numpy-plain lang-icon"></i>
+              <span class="next-title">NumPy</span>
+            </button>
+          </h2>
+          <div id="topics-numpy" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Массивы</h3>
+                    <p class="make-text mb-3">Главный объект NumPy — массив чисел. Он хранит данные компактно и считает очень быстро.</p>
+                    <pre class="lang-code"><code>import numpy as np
+
+a = np.array([1, 2, 3])
+print(a.shape)  # (3,)</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Действия над всем массивом</h3>
+                    <p class="make-text mb-3">Операции применяются сразу ко всем элементам, без циклов.</p>
+                    <pre class="lang-code"><code>print(a * 2)  # [2 4 6]
+print(a + a)  # [2 4 6]</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Матрицы</h3>
+                    <p class="make-text mb-3">Двумерный массив — это матрица. <code>.T</code> транспонирует её, а <code>@</code> перемножает матрицы.</p>
+                    <pre class="lang-code"><code>m = np.array([[1, 2], [3, 4]])
+print(m.T)
+print(m @ m)</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Статистика</h3>
+                    <p class="make-text mb-3">Готовые функции для среднего, максимума и разброса значений.</p>
+                    <pre class="lang-code"><code>data = np.array([10, 20, 30, 40])
+print(data.mean(), data.max(), data.std())</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Matplotlib -->
+        <section class="accordion-item" id="ch-matplotlib">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-matplotlib" aria-expanded="false" aria-controls="topics-matplotlib">
+              <i class="devicon-matplotlib-plain lang-icon"></i>
+              <span class="next-title">Matplotlib</span>
+            </button>
+          </h2>
+          <div id="topics-matplotlib" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Линейный график</h3>
+                    <p class="make-text mb-3"><code>plot</code> рисует линию по точкам — так показывают изменения во времени.</p>
+                    <pre class="lang-code"><code>import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3, 4], [10, 15, 8, 20])
+plt.show()</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Столбчатая диаграмма</h3>
+                    <p class="make-text mb-3"><code>bar</code> рисует столбцы — удобно сравнивать значения между собой.</p>
+                    <pre class="lang-code"><code>plt.bar(["Янв", "Фев", "Мар"], [120, 150, 90])
+plt.show()</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Подписи</h3>
+                    <p class="make-text mb-3">Заголовок и подписи осей делают график понятным без пояснений.</p>
+                    <pre class="lang-code"><code>plt.title("Продажи")
+plt.xlabel("Месяц")
+plt.ylabel("Выручка")</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Jupyter -->
+        <section class="accordion-item" id="ch-jupyter">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-jupyter" aria-expanded="false" aria-controls="topics-jupyter">
+              <i class="devicon-jupyter-plain lang-icon"></i>
+              <span class="next-title">Jupyter</span>
+            </button>
+          </h2>
+          <div id="topics-jupyter" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Установка и запуск</h3>
+                    <p class="make-text mb-3">Блокнот ставят через pip и открывают в браузере одной командой.</p>
+                    <pre class="lang-code"><code>pip install notebook
+jupyter notebook</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Ячейки</h3>
+                    <p class="make-text mb-3">Блокнот состоит из ячеек с кодом и текстом. Ячейку запускают сочетанием Shift + Enter, а результат последней строки появляется под ней.</p>
+                    <pre class="lang-code"><code>x = 5
+x * 2  # под ячейкой появится 10</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Графики в блокноте</h3>
+                    <p class="make-text mb-3">Графики Matplotlib рисуются прямо под ячейкой — удобно смотреть данные по шагам.</p>
+                    <pre class="lang-code"><code>import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3], [2, 4, 1])
+plt.show()</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer class="site-footer py-4 mt-5">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="h4 fw-bold text-white mb-1">Dev<span class="logo__accent">Path</span></p>
+          <p class="text-white mb-1">Лёгкий старт в IT — начни изучать уже сейчас.</p>
+          <p class="mb-0">Каждый программист когда-то написал свою первую строчку кода. Твоя — следующая.</p>
+        </div>
+        <a class="btn btn-red" href="directions.html">Начать путь</a>
+      </div>
+      <hr>
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+         <span>&copy; 2026 DevPath. Все права защищены.</span>
+        <div class="d-flex flex-wrap column-gap-3 row-gap-1">
+          <a class="site-footer__link" href="index.html">Главная</a>
+          <a class="site-footer__link" href="directions.html">Направления</a>
+          <a class="site-footer__link" href="reviews.html">Отзывы</a>
+          <a class="site-footer__link" href="about.html">О проекте</a>
+          <a class="site-footer__link" href="how.html">Как это работает</a>
+        </div> 
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== КНОПКА «НАВЕРХ» ========== -->
+  <a class="btn rounded-circle shadow to-top position-fixed bottom-0 end-0 m-4" href="#top" aria-label="Наверх">UP</a>
+
+  <!-- Bootstrap JS: нужен для меню на телефоне и раскрытия глав -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Свой JS: плавное появление разделов и счётчики -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>

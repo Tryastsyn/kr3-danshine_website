@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отзывы — DevPath</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Иконки языков программирования (Devicon) -->
+  <link href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css" rel="stylesheet">
+  <!-- Пиксельный шрифт для карточек -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Свои стили подключаем ПОСЛЕ Bootstrap -->
+  <link rel="stylesheet" href="styles/style.css?v=4">
+</head>
+<body id="top" class="d-flex flex-column min-vh-100">
+
+  <!-- ========== МЕНЮ (одинаковое на всех страницах) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold logo" href="index.html">Dev<span class="logo__accent">Path</span></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Открыть меню"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="directions.html">Направления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="reviews.html">Отзывы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">О проекте</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="how.html">Как это работает</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow-1">
+
+    <!-- ========== ОТЗЫВЫ: ВСТУПЛЕНИЕ С АДОЙ ========== -->
+    <!-- Пока на странице примеры: замени тексты и имена на настоящие отзывы и поправь текст под заголовком -->
+    <section class="container pt-4 pb-5">
+      <!-- Хлебные крошки -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb crumbs">
+          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Отзывы</li>
+        </ol>
+      </nav>
+
+      <div class="row align-items-center g-4 g-lg-5 py-lg-4">
+        <div class="col-12 col-lg-7">
+          <span class="section-label">Отзывы</span>
+          <h1 class="display-5 fw-bold mt-3">Что говорят <span class="hero__accent">новички</span></h1>
+          <p class="lead hero__text mb-4">
+            Скоро здесь появятся отзывы первых пользователей, а пока — примеры того,
+            как DevPath помогает выбрать направление и сделать первый шаг.
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-red btn-lg" href="#reviews">Читать отзывы</a>
+            <a class="btn btn-outline-light btn-lg" href="#stories">Истории</a>
+          </div>
+        </div>
+
+        <!-- Тьмуша с репликой -->
+        <div class="col-12 col-lg-5 text-center hero__visual">
+          <div class="bubble mb-4 phrase" data-phrases="reviews">Мне тоже было трудно выбрать… Почитай, что пишут другие!</div>
+          <div>
+            <img class="mascot" src="images/ada.png" alt="Тьмуша — пиксельный маскот DevPath">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ОТЗЫВЫ ========== -->
+    <section id="reviews" class="container py-5">
+      <span class="section-label">Отзывы</span>
+      <h2 class="fw-bold mt-3 mb-2">Что пишут о DevPath</h2>
+      <p class="directions__text mb-4">Как сайт помог понять направление и выбрать первый язык.</p>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="make-card d-flex flex-column">
+            <p class="intro-title mb-2"><span class="hero__accent">"</span></p>
+            <p class="mb-4">Долго не могла выбрать между дизайном и программированием. На DevPath поняла, что фронтенд — это и то и другое. Начала с HTML и уже сверстала первую страницу.</p>
+            <!-- Автор: кружок с первой буквой имени, имя и выбранное направление -->
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <div class="step__number flex-shrink-0">А</div>
+              <div>
+                <p class="fw-bold mb-0">Аня</p>
+                <p class="make-text small">Выбрала фронтенд</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="make-card d-flex flex-column">
+            <p class="intro-title mb-2"><span class="hero__accent">"</span></p>
+            <p class="mb-4">Хотел делать игры, но не знал, с чего начать. Здесь понятно объяснили разницу между Unity и Unreal Engine. Выбрал Unity и C# — уже двигаю своего первого персонажа.</p>
+            <!-- Автор: кружок с первой буквой имени, имя и выбранное направление -->
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <div class="step__number flex-shrink-0">М</div>
+              <div>
+                <p class="fw-bold mb-0">Максим</p>
+                <p class="make-text small">Выбрал разработку игр</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="make-card d-flex flex-column">
+            <p class="intro-title mb-2"><span class="hero__accent">"</span></p>
+            <p class="mb-4">Думала, что IT — это только код. Оказалось, есть анализ данных, где главное — таблицы и выводы. Темы по SQL с примерами — самое полезное, что я нашла.</p>
+            <!-- Автор: кружок с первой буквой имени, имя и выбранное направление -->
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <div class="step__number flex-shrink-0">К</div>
+              <div>
+                <p class="fw-bold mb-0">Катя</p>
+                <p class="make-text small">Выбрала анализ данных</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="make-card d-flex flex-column">
+            <p class="intro-title mb-2"><span class="hero__accent">"</span></p>
+            <p class="mb-4">Не понимал, чем бэкенд отличается от фронтенда. После страницы направления всё встало на места: сервер, база данных, API. Начал с Python и написал первую функцию.</p>
+            <!-- Автор: кружок с первой буквой имени, имя и выбранное направление -->
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <div class="step__number flex-shrink-0">И</div>
+              <div>
+                <p class="fw-bold mb-0">Илья</p>
+                <p class="make-text small">Выбрал бэкенд</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="make-card d-flex flex-column">
+            <p class="intro-title mb-2"><span class="hero__accent">"</span></p>
+            <p class="mb-4">Боялась, что без опыта в безопасность не попасть. Оказалось, начинать нужно с основ: сетей и Linux. Изучаю командную строку и уже не боюсь терминала.</p>
+            <!-- Автор: кружок с первой буквой имени, имя и выбранное направление -->
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <div class="step__number flex-shrink-0">Л</div>
+              <div>
+                <p class="fw-bold mb-0">Лиза</p>
+                <p class="make-text small">Выбрала кибербезопасность</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="make-card d-flex flex-column">
+            <p class="intro-title mb-2"><span class="hero__accent">"</span></p>
+            <p class="mb-4">Думал, что для приложений обязательно нужен Mac. Узнал, что под Android можно писать на любом компьютере. Выбрал Kotlin — первое приложение уже работает на моём телефоне.</p>
+            <!-- Автор: кружок с первой буквой имени, имя и выбранное направление -->
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <div class="step__number flex-shrink-0">Т</div>
+              <div>
+                <p class="fw-bold mb-0">Тимур</p>
+                <p class="make-text small">Выбрал мобильную разработку</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ИСТОРИИ: БЫЛО → СТАЛО ========== -->
+    <section id="stories" class="container py-5">
+      <span class="section-label">Истории</span>
+      <h2 class="fw-bold mt-3 mb-2">Было → стало</h2>
+      <p class="directions__text mb-4">С чего начинали и что получилось через пару месяцев учёбы.</p>
+
+      <div class="row g-4">
+        <div class="col-12 col-lg-6">
+          <div class="make-card">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="step__number flex-shrink-0">Д</div>
+              <div>
+                <p class="fw-bold mb-0">Дима</p>
+                <p class="make-text small">ИИ и машинное обучение</p>
+              </div>
+            </div>
+            <h3 class="make-title">Было</h3>
+            <p class="make-text mb-3">Про нейросети слышал отовсюду, но казалось, что это только для учёных с огромными компьютерами.</p>
+            <h3 class="make-title">Стало</h3>
+            <p class="make-text">Разобрался, что путь начинается с Python и NumPy. Прошёл основы из материалов и обучил первую простую модель в Jupyter.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="make-card">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="step__number flex-shrink-0">О</div>
+              <div>
+                <p class="fw-bold mb-0">Олег</p>
+                <p class="make-text small">DevOps</p>
+              </div>
+            </div>
+            <h3 class="make-title">Было</h3>
+            <p class="make-text mb-3">Умел работать с компьютером, но не понимал, что такое Docker и как сайт попадает на сервер.</p>
+            <h3 class="make-title">Стало</h3>
+            <p class="make-text">Начал с Linux и Git, потом запустил первый контейнер в Docker. Теперь понимаю, как код с ноутбука оказывается в интернете.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ТВОЙ ОТЗЫВ: АДА ЗОВЁТ НАЧАТЬ ========== -->
+    <section class="container py-5">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-4">
+        <div>
+          <span class="section-label">Твоя очередь</span>
+          <h2 class="fw-bold mt-3 mb-2">Здесь может быть твой отзыв</h2>
+          <p class="directions__text mb-4">Выбери направление, сделай первый шаг — и расскажи, что получилось.</p>
+          <a class="btn btn-red btn-lg" href="directions.html">Выбрать направление</a>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="bubble bubble--right">Буду ждать твою историю!</div>
+          <img class="mascot mascot--small" src="images/ada.png" alt="">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer class="site-footer py-4 mt-5">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="h4 fw-bold text-white mb-1">Dev<span class="logo__accent">Path</span></p>
+          <p class="text-white mb-1">Лёгкий старт в IT — начни изучать уже сейчас.</p>
+          <p class="mb-0">Каждый программист когда-то написал свою первую строчку кода. Твоя — следующая.</p>
+        </div>
+        <a class="btn btn-red" href="directions.html">Начать путь</a>
+      </div>
+      <hr>
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+        <span>&copy; 2026 DevPath. Все права защищены.</span>
+        <div class="d-flex flex-wrap column-gap-3 row-gap-1">
+          <a class="site-footer__link" href="index.html">Главная</a>
+          <a class="site-footer__link" href="directions.html">Направления</a>
+          <a class="site-footer__link" href="reviews.html">Отзывы</a>
+          <a class="site-footer__link" href="about.html">О проекте</a>
+          <a class="site-footer__link" href="how.html">Как это работает</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== КНОПКА «НАВЕРХ» ========== -->
+  <a class="btn rounded-circle shadow to-top position-fixed bottom-0 end-0 m-4" href="#top" aria-label="Наверх">UP</a>
+
+  <!-- Bootstrap JS: нужен для меню на телефоне и accordion -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Свой JS: плавное появление разделов и счётчики -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>

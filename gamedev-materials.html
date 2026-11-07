@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Материалы: Разработка игр — DevPath</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Иконки языков программирования (Devicon) -->
+  <link href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css" rel="stylesheet">
+  <!-- Пиксельный шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Свои стили подключаем ПОСЛЕ Bootstrap -->
+  <link rel="stylesheet" href="styles/style.css?v=4">
+</head>
+<body id="top" class="d-flex flex-column min-vh-100">
+
+  <!-- ========== МЕНЮ (одинаковое на всех страницах) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold logo" href="index.html">Dev<span class="logo__accent">Path</span></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Открыть меню"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="directions.html">Направления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html">Отзывы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">О проекте</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="how.html">Как это работает</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow-1">
+
+    <!-- ========== ВСТУПЛЕНИЕ: картинка + окно с описанием ========== -->
+    <section class="container pt-4 pb-5">
+      <!-- Хлебные крошки -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb crumbs">
+          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+          <li class="breadcrumb-item"><a href="directions.html">Направления</a></li>
+          <li class="breadcrumb-item"><a href="gamedev.html">Разработка игр</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Материалы</li>
+        </ol>
+      </nav>
+
+      <div class="intro">
+        <img class="intro-img" src="images/cards/gamedev.png" alt="">
+        <div class="intro-body">
+          <h1 class="intro-title">Материалы</h1>
+          <p class="intro-text">
+            Главные темы по каждому языку и инструменту направления «Разработка игр» —
+            коротко и с примерами кода. Нажми на название, чтобы открыть темы.
+          </p>
+          <ul class="intro-menu">
+            <li><a href="#ch-csharp">C#</a></li>
+            <li><a href="#ch-unity">Unity</a></li>
+            <li><a href="#ch-godot">Godot</a></li>
+            <li><a href="#ch-cpp">C++</a></li>
+            <li><a href="#ch-unreal">Unreal Engine</a></li>
+            <li><a href="#ch-blender">Blender</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ТЕМЫ ПО ЯЗЫКАМ И ИНСТРУМЕНТАМ ========== -->
+    <!-- Каждый язык — раскрывающаяся глава (Bootstrap accordion).
+         Вид глав берётся из класса .faq, как у «Частых вопросов» на главной -->
+    <section class="container py-4">
+      <div class="accordion faq">
+
+        <!-- Глава: C# -->
+        <section class="accordion-item" id="ch-csharp">
+          <h2 class="accordion-header">
+            <button class="accordion-button gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-csharp" aria-expanded="true" aria-controls="topics-csharp">
+              <i class="devicon-csharp-plain lang-icon"></i>
+              <span class="next-title">C#</span>
+            </button>
+          </h2>
+          <div id="topics-csharp" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Переменные и типы</h3>
+                    <p class="make-text mb-3">Сначала пишут тип, потом имя. <code>int</code> — целое число, <code>float</code> — дробное, <code>bool</code> — да или нет, <code>string</code> — строка.</p>
+                    <pre class="lang-code"><code>int lives = 3;
+float speed = 5.5f;
+bool isAlive = true;
+string playerName = "Герой";</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Условия</h3>
+                    <p class="make-text mb-3"><code>if</code> выполняет код, если условие верно, а <code>else</code> — если нет.</p>
+                    <pre class="lang-code"><code>if (lives &lt;= 0)
+{
+    Console.WriteLine("Игра окончена");
+}
+else
+{
+    Console.WriteLine("Жизней: " + lives);
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Циклы</h3>
+                    <p class="make-text mb-3"><code>for</code> повторяет код нужное число раз, <code>foreach</code> проходит по всем элементам массива.</p>
+                    <pre class="lang-code"><code>for (int i = 1; i &lt;= 3; i++)
+{
+    Console.WriteLine("Волна " + i);
+}
+
+string[] items = { "Меч", "Щит" };
+foreach (string item in items)
+{
+    Console.WriteLine(item);
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Методы</h3>
+                    <p class="make-text mb-3">Функции в C# называются методами. В скобках — параметры, перед именем — тип результата.</p>
+                    <pre class="lang-code"><code>static int Damage(int power, int armor)
+{
+    return power - armor;
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Классы</h3>
+                    <p class="make-text mb-3">Класс описывает объект игры: его данные и действия.</p>
+                    <pre class="lang-code"><code>class Enemy
+{
+    public int Health = 100;
+
+    public void TakeDamage(int amount)
+    {
+        Health -= amount;
+    }
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Unity -->
+        <section class="accordion-item" id="ch-unity">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-unity" aria-expanded="false" aria-controls="topics-unity">
+              <i class="devicon-unity-plain lang-icon"></i>
+              <span class="next-title">Unity</span>
+            </button>
+          </h2>
+          <div id="topics-unity" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Сцены и объекты</h3>
+                    <p class="make-text mb-3">Игра в Unity состоит из сцен, а сцена — из игровых объектов: персонажей, камер, света. Объект можно создать и из кода.</p>
+                    <pre class="lang-code"><code>GameObject box = GameObject.CreatePrimitive(PrimitiveType.Cube);
+box.transform.position = new Vector3(0, 1, 0);</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Скрипты</h3>
+                    <p class="make-text mb-3">Поведение объекта задают скриптом на C#. Скрипт — это класс-наследник <code>MonoBehaviour</code>, его вешают на объект как компонент.</p>
+                    <pre class="lang-code"><code>using UnityEngine;
+
+public class Coin : MonoBehaviour
+{
+    void Start()
+    {
+        Debug.Log("Монета появилась");
+    }
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Движение в Update</h3>
+                    <p class="make-text mb-3">Метод <code>Update</code> вызывается каждый кадр — в нём читают нажатия и двигают персонажа.</p>
+                    <pre class="lang-code"><code>void Update()
+{
+    float x = Input.GetAxis("Horizontal");
+    transform.Translate(x * 5f * Time.deltaTime, 0, 0);
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Столкновения</h3>
+                    <p class="make-text mb-3">Методы вроде <code>OnTriggerEnter2D</code> срабатывают, когда объекты касаются друг друга.</p>
+                    <pre class="lang-code"><code>void OnTriggerEnter2D(Collider2D other)
+{
+    if (other.CompareTag("Player"))
+    {
+        Destroy(gameObject);
+    }
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Godot -->
+        <section class="accordion-item" id="ch-godot">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-godot" aria-expanded="false" aria-controls="topics-godot">
+              <i class="devicon-godot-plain lang-icon"></i>
+              <span class="next-title">Godot</span>
+            </button>
+          </h2>
+          <div id="topics-godot" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Узлы и сцены</h3>
+                    <p class="make-text mb-3">В Godot всё состоит из узлов. Из них собирают сцены: персонажа, уровень, меню. <code>_ready</code> срабатывает, когда узел появился.</p>
+                    <pre class="lang-code"><code>extends Node2D
+
+func _ready():
+    print("Сцена загружена")</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Переменные в GDScript</h3>
+                    <p class="make-text mb-3"><code>var</code> создаёт переменную, тип можно указать через двоеточие, <code>const</code> — постоянная.</p>
+                    <pre class="lang-code"><code>var lives = 3
+var speed: float = 200.0
+const MAX_LIVES = 5</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Движение персонажа</h3>
+                    <p class="make-text mb-3"><code>_physics_process</code> вызывается каждый кадр физики, <code>move_and_slide</code> двигает персонажа с учётом стен.</p>
+                    <pre class="lang-code"><code>extends CharacterBody2D
+
+var speed = 200
+
+func _physics_process(delta):
+    velocity.x = Input.get_axis("ui_left", "ui_right") * speed
+    move_and_slide()</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Сигналы</h3>
+                    <p class="make-text mb-3">Сигнал — сообщение узла о событии, например о нажатии кнопки. Его подключают к своей функции.</p>
+                    <pre class="lang-code"><code>func _ready():
+    $Button.pressed.connect(_on_button_pressed)
+
+func _on_button_pressed():
+    print("Кнопка нажата")</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: C++ -->
+        <section class="accordion-item" id="ch-cpp">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-cpp" aria-expanded="false" aria-controls="topics-cpp">
+              <i class="devicon-cplusplus-plain lang-icon"></i>
+              <span class="next-title">C++</span>
+            </button>
+          </h2>
+          <div id="topics-cpp" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Вывод на экран</h3>
+                    <p class="make-text mb-3">Программа начинается с функции <code>main</code>. <code>std::cout</code> выводит текст.</p>
+                    <pre class="lang-code"><code>#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; "Привет, игрок!" &lt;&lt; std::endl;
+    return 0;
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Переменные и типы</h3>
+                    <p class="make-text mb-3">Тип пишут перед именем: <code>int</code>, <code>double</code>, <code>bool</code>, <code>std::string</code>.</p>
+                    <pre class="lang-code"><code>int lives = 3;
+double speed = 5.5;
+bool isAlive = true;
+std::string name = "Герой";</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Условия</h3>
+                    <p class="make-text mb-3"><code>if</code> и <code>else</code> выбирают, какой код выполнить.</p>
+                    <pre class="lang-code"><code>if (lives &gt; 0) {
+    std::cout &lt;&lt; "Играем дальше";
+} else {
+    std::cout &lt;&lt; "Игра окончена";
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Циклы</h3>
+                    <p class="make-text mb-3"><code>for</code> повторяет код нужное число раз.</p>
+                    <pre class="lang-code"><code>for (int i = 1; i &lt;= 3; i++) {
+    std::cout &lt;&lt; "Уровень " &lt;&lt; i &lt;&lt; std::endl;
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Функции</h3>
+                    <p class="make-text mb-3">Тип результата пишут перед именем, а типы параметров — в скобках.</p>
+                    <pre class="lang-code"><code>int damage(int power, int armor) {
+    return power - armor;
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Unreal Engine -->
+        <section class="accordion-item" id="ch-unreal">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-unreal" aria-expanded="false" aria-controls="topics-unreal">
+              <i class="devicon-unrealengine-original lang-icon"></i>
+              <span class="next-title">Unreal Engine</span>
+            </button>
+          </h2>
+          <div id="topics-unreal" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Акторы</h3>
+                    <p class="make-text mb-3">Любой объект на уровне — актор: персонаж, дверь, монета. Свой актор — это класс C++, наследник <code>AActor</code>.</p>
+                    <pre class="lang-code"><code>UCLASS()
+class AMyCoin : public AActor
+{
+    GENERATED_BODY()
+};</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">BeginPlay и Tick</h3>
+                    <p class="make-text mb-3"><code>BeginPlay</code> срабатывает при старте игры, <code>Tick</code> — каждый кадр. Здесь монета вращается.</p>
+                    <pre class="lang-code"><code>void AMyCoin::BeginPlay()
+{
+    Super::BeginPlay();
+}
+
+void AMyCoin::Tick(float DeltaTime)
+{
+    Super::Tick(DeltaTime);
+    AddActorLocalRotation(FRotator(0, 90 * DeltaTime, 0));
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Сообщения в лог</h3>
+                    <p class="make-text mb-3"><code>UE_LOG</code> пишет сообщение в окно Output Log — так проверяют, что код сработал.</p>
+                    <pre class="lang-code"><code>UE_LOG(LogTemp, Warning, TEXT("Монета собрана!"));</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Blueprints</h3>
+                    <p class="make-text">Логику можно собирать без кода — соединяя визуальные блоки в редакторе Blueprints. Новички часто начинают именно с них.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Blender -->
+        <section class="accordion-item" id="ch-blender">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-blender" aria-expanded="false" aria-controls="topics-blender">
+              <i class="devicon-blender-original lang-icon"></i>
+              <span class="next-title">Blender</span>
+            </button>
+          </h2>
+          <div id="topics-blender" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Главные клавиши</h3>
+                    <p class="make-text mb-3">Объекты двигают, вращают и масштабируют горячими клавишами. Tab переключает режим правки вершин.</p>
+                    <pre class="lang-code"><code>G   — переместить
+R   — повернуть
+S   — масштабировать
+Tab — режим правки</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Скрипты на Python</h3>
+                    <p class="make-text mb-3">Через модуль <code>bpy</code> можно управлять Blender из кода, например добавить куб.</p>
+                    <pre class="lang-code"><code>import bpy
+
+bpy.ops.mesh.primitive_cube_add(size=2, location=(0, 0, 0))</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Экспорт в игру</h3>
+                    <p class="make-text mb-3">Готовую модель сохраняют в формате glTF или FBX и переносят в Unity, Godot или Unreal.</p>
+                    <pre class="lang-code"><code>import bpy
+
+bpy.ops.export_scene.gltf(filepath="model.glb")</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer class="site-footer py-4 mt-5">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="h4 fw-bold text-white mb-1">Dev<span class="logo__accent">Path</span></p>
+          <p class="text-white mb-1">Лёгкий старт в IT — начни изучать уже сейчас.</p>
+          <p class="mb-0">Каждый программист когда-то написал свою первую строчку кода. Твоя — следующая.</p>
+        </div>
+        <a class="btn btn-red" href="directions.html">Начать путь</a>
+      </div>
+      <hr>
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+         <span>&copy; 2026 DevPath. Все права защищены.</span>
+        <div class="d-flex flex-wrap column-gap-3 row-gap-1">
+          <a class="site-footer__link" href="index.html">Главная</a>
+          <a class="site-footer__link" href="directions.html">Направления</a>
+          <a class="site-footer__link" href="reviews.html">Отзывы</a>
+          <a class="site-footer__link" href="about.html">О проекте</a>
+          <a class="site-footer__link" href="how.html">Как это работает</a>
+        </div> 
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== КНОПКА «НАВЕРХ» ========== -->
+  <a class="btn rounded-circle shadow to-top position-fixed bottom-0 end-0 m-4" href="#top" aria-label="Наверх">UP</a>
+
+  <!-- Bootstrap JS: нужен для меню на телефоне и раскрытия глав -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Свой JS: плавное появление разделов и счётчики -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>

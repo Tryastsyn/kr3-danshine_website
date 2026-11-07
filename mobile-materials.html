@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Материалы: Мобильная разработка — DevPath</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Иконки языков программирования (Devicon) -->
+  <link href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css" rel="stylesheet">
+  <!-- Пиксельный шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Свои стили подключаем ПОСЛЕ Bootstrap -->
+  <link rel="stylesheet" href="styles/style.css?v=4">
+</head>
+<body id="top" class="d-flex flex-column min-vh-100">
+
+  <!-- ========== МЕНЮ (одинаковое на всех страницах) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold logo" href="index.html">Dev<span class="logo__accent">Path</span></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Открыть меню"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="directions.html">Направления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html">Отзывы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">О проекте</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="how.html">Как это работает</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow-1">
+
+    <!-- ========== ВСТУПЛЕНИЕ: картинка + окно с описанием ========== -->
+    <section class="container pt-4 pb-5">
+      <!-- Хлебные крошки -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb crumbs">
+          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+          <li class="breadcrumb-item"><a href="directions.html">Направления</a></li>
+          <li class="breadcrumb-item"><a href="mobile.html">Мобильная разработка</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Материалы</li>
+        </ol>
+      </nav>
+
+      <div class="intro">
+        <img class="intro-img" src="images/cards/mobile.png" alt="">
+        <div class="intro-body">
+          <h1 class="intro-title">Материалы</h1>
+          <p class="intro-text">
+            Главные темы по каждому языку и инструменту направления «Мобильная разработка» —
+            коротко и с примерами кода. Нажми на название, чтобы открыть темы.
+          </p>
+          <ul class="intro-menu">
+            <li><a href="#ch-kotlin">Kotlin</a></li>
+            <li><a href="#ch-swift">Swift</a></li>
+            <li><a href="#ch-dart">Dart</a></li>
+            <li><a href="#ch-flutter">Flutter</a></li>
+            <li><a href="#ch-androidstudio">Android Studio</a></li>
+            <li><a href="#ch-xcode">Xcode</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ТЕМЫ ПО ЯЗЫКАМ И ИНСТРУМЕНТАМ ========== -->
+    <!-- Каждый язык — раскрывающаяся глава (Bootstrap accordion).
+         Вид глав берётся из класса .faq, как у «Частых вопросов» на главной -->
+    <section class="container py-4">
+      <div class="accordion faq">
+
+        <!-- Глава: Kotlin -->
+        <section class="accordion-item" id="ch-kotlin">
+          <h2 class="accordion-header">
+            <button class="accordion-button gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-kotlin" aria-expanded="true" aria-controls="topics-kotlin">
+              <i class="devicon-kotlin-plain lang-icon"></i>
+              <span class="next-title">Kotlin</span>
+            </button>
+          </h2>
+          <div id="topics-kotlin" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Переменные</h3>
+                    <p class="make-text mb-3"><code>val</code> — значение нельзя изменить, <code>var</code> — можно.</p>
+                    <pre class="lang-code"><code>val name = "Гость"  // нельзя изменить
+var age = 18        // можно изменить
+age += 1</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Типы данных</h3>
+                    <p class="make-text mb-3">Основные типы: <code>Int</code>, <code>Double</code>, <code>Boolean</code>, <code>String</code>. Список создают через <code>listOf</code>.</p>
+                    <pre class="lang-code"><code>val count: Int = 10
+val price: Double = 99.9
+val isOnline: Boolean = true
+val text: String = "Привет"
+val apps = listOf("Карты", "Почта")</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Условия</h3>
+                    <p class="make-text mb-3">Кроме <code>if</code> есть удобный <code>when</code> — выбор из нескольких вариантов.</p>
+                    <pre class="lang-code"><code>if (age &gt;= 18) {
+    println("Взрослый")
+} else {
+    println("Подросток")
+}
+
+when (age) {
+    in 0..13 -&gt; println("Ребёнок")
+    else -&gt; println("Не ребёнок")
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Циклы</h3>
+                    <p class="make-text mb-3"><code>for</code> проходит по диапазону чисел или по списку.</p>
+                    <pre class="lang-code"><code>for (i in 1..3) {
+    println("Шаг $i")
+}
+
+for (app in apps) {
+    println(app)
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Функции</h3>
+                    <p class="make-text mb-3"><code>fun</code> создаёт функцию. Тип параметра и результата пишут через двоеточие.</p>
+                    <pre class="lang-code"><code>fun greet(name: String): String {
+    return "Привет, $name!"
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Swift -->
+        <section class="accordion-item" id="ch-swift">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-swift" aria-expanded="false" aria-controls="topics-swift">
+              <i class="devicon-swift-plain lang-icon"></i>
+              <span class="next-title">Swift</span>
+            </button>
+          </h2>
+          <div id="topics-swift" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Переменные</h3>
+                    <p class="make-text mb-3"><code>let</code> — константа, <code>var</code> — переменная.</p>
+                    <pre class="lang-code"><code>let name = "Гость"  // константа
+var age = 18        // переменная
+age += 1</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Типы данных</h3>
+                    <p class="make-text mb-3">Основные типы: <code>Int</code>, <code>Double</code>, <code>Bool</code>, <code>String</code>. Массив пишут в квадратных скобках.</p>
+                    <pre class="lang-code"><code>let count: Int = 10
+let price: Double = 99.9
+let isOnline: Bool = true
+let apps: [String] = ["Карты", "Почта"]</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Условия</h3>
+                    <p class="make-text mb-3">Условие пишут без круглых скобок.</p>
+                    <pre class="lang-code"><code>if age &gt;= 18 {
+    print("Взрослый")
+} else {
+    print("Подросток")
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Циклы</h3>
+                    <p class="make-text mb-3"><code>for-in</code> проходит по диапазону чисел или по массиву.</p>
+                    <pre class="lang-code"><code>for i in 1...3 {
+    print("Шаг \(i)")
+}
+
+for app in apps {
+    print(app)
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Функции</h3>
+                    <p class="make-text mb-3"><code>func</code> создаёт функцию, тип результата пишут после стрелки <code>-&gt;</code>.</p>
+                    <pre class="lang-code"><code>func greet(name: String) -&gt; String {
+    return "Привет, \(name)!"
+}
+
+print(greet(name: "друг"))</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Dart -->
+        <section class="accordion-item" id="ch-dart">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-dart" aria-expanded="false" aria-controls="topics-dart">
+              <i class="devicon-dart-plain lang-icon"></i>
+              <span class="next-title">Dart</span>
+            </button>
+          </h2>
+          <div id="topics-dart" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Переменные</h3>
+                    <p class="make-text mb-3"><code>var</code> — обычная переменная, <code>final</code> задают один раз, <code>const</code> — значение известно заранее.</p>
+                    <pre class="lang-code"><code>var age = 18;
+final name = 'Гость';
+const maxApps = 10;</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Типы данных</h3>
+                    <p class="make-text mb-3">Основные типы: <code>int</code>, <code>double</code>, <code>bool</code>, <code>String</code>, список <code>List</code>.</p>
+                    <pre class="lang-code"><code>int count = 10;
+double price = 99.9;
+bool isOnline = true;
+String text = 'Привет';
+List&lt;String&gt; apps = ['Карты', 'Почта'];</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Условия</h3>
+                    <p class="make-text mb-3"><code>if</code> выполняет код, если условие верно, а <code>else</code> — если нет.</p>
+                    <pre class="lang-code"><code>if (age &gt;= 18) {
+  print('Взрослый');
+} else {
+  print('Подросток');
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Циклы</h3>
+                    <p class="make-text mb-3">Обычный <code>for</code> со счётчиком и <code>for-in</code> для прохода по списку.</p>
+                    <pre class="lang-code"><code>for (var i = 1; i &lt;= 3; i++) {
+  print('Шаг $i');
+}
+
+for (var app in apps) {
+  print(app);
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Функции</h3>
+                    <p class="make-text mb-3">Тип результата пишут перед именем функции.</p>
+                    <pre class="lang-code"><code>String greet(String name) {
+  return 'Привет, $name!';
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Flutter -->
+        <section class="accordion-item" id="ch-flutter">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-flutter" aria-expanded="false" aria-controls="topics-flutter">
+              <i class="devicon-flutter-plain lang-icon"></i>
+              <span class="next-title">Flutter</span>
+            </button>
+          </h2>
+          <div id="topics-flutter" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Новый проект</h3>
+                    <p class="make-text mb-3">Проект создают и запускают командами в терминале.</p>
+                    <pre class="lang-code"><code>flutter create my_app
+cd my_app
+flutter run</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Виджеты</h3>
+                    <p class="make-text mb-3">Всё на экране — виджеты: текст, кнопки, отступы, картинки.</p>
+                    <pre class="lang-code"><code>const Text(
+  'Привет!',
+  style: TextStyle(fontSize: 24),
+)</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Колонки и строки</h3>
+                    <p class="make-text mb-3"><code>Column</code> ставит виджеты друг под другом, <code>Row</code> — в ряд.</p>
+                    <pre class="lang-code"><code>Column(
+  children: [
+    const Text('Заголовок'),
+    ElevatedButton(
+      onPressed: () {},
+      child: const Text('Нажми'),
+    ),
+  ],
+)</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Состояние</h3>
+                    <p class="make-text mb-3">В <code>StatefulWidget</code> данные меняют через <code>setState</code> — и экран перерисовывается.</p>
+                    <pre class="lang-code"><code>int count = 0;
+
+ElevatedButton(
+  onPressed: () =&gt; setState(() =&gt; count++),
+  child: Text('Нажали $count раз'),
+)</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Android Studio -->
+        <section class="accordion-item" id="ch-androidstudio">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-androidstudio" aria-expanded="false" aria-controls="topics-androidstudio">
+              <i class="devicon-androidstudio-plain lang-icon"></i>
+              <span class="next-title">Android Studio</span>
+            </button>
+          </h2>
+          <div id="topics-androidstudio" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Структура проекта</h3>
+                    <p class="make-text mb-3">Код на Kotlin лежит в папке <code>kotlin+java</code>, картинки и другие ресурсы — в <code>res</code>, настройки приложения — в <code>AndroidManifest.xml</code>.</p>
+                    <pre class="lang-code"><code>app/
+├── manifests/AndroidManifest.xml
+├── kotlin+java/MainActivity.kt
+└── res/
+    ├── drawable/
+    └── values/</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Экран на Jetpack Compose</h3>
+                    <p class="make-text mb-3">Новые проекты рисуют экраны функциями с пометкой <code>@Composable</code>.</p>
+                    <pre class="lang-code"><code>@Composable
+fun Greeting() {
+    Text(text = "Привет!")
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Запуск на эмуляторе</h3>
+                    <p class="make-text">В Device Manager создают виртуальный телефон, а приложение запускают кнопкой Run или сочетанием Ctrl + R на Mac (Shift + F10 на Windows).</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Глава: Xcode -->
+        <section class="accordion-item" id="ch-xcode">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#topics-xcode" aria-expanded="false" aria-controls="topics-xcode">
+              <i class="devicon-xcode-plain lang-icon"></i>
+              <span class="next-title">Xcode</span>
+            </button>
+          </h2>
+          <div id="topics-xcode" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Новый проект</h3>
+                    <p class="make-text">File → New → Project → App, в поле Interface выбирают SwiftUI. Xcode работает только на Mac.</p>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Экран на SwiftUI</h3>
+                    <p class="make-text mb-3">Экран описывают структурой с полем <code>body</code>. <code>VStack</code> ставит элементы друг под другом.</p>
+                    <pre class="lang-code"><code>struct ContentView: View {
+    var body: some View {
+        VStack {
+            Text("Привет!")
+            Button("Нажми") {
+                print("Нажато")
+            }
+        }
+    }
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="make-card">
+                    <h3 class="make-title">Запуск в симуляторе</h3>
+                    <p class="make-text">Cmd + R собирает приложение и открывает его в симуляторе iPhone прямо на компьютере.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer class="site-footer py-4 mt-5">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="h4 fw-bold text-white mb-1">Dev<span class="logo__accent">Path</span></p>
+          <p class="text-white mb-1">Лёгкий старт в IT — начни изучать уже сейчас.</p>
+          <p class="mb-0">Каждый программист когда-то написал свою первую строчку кода. Твоя — следующая.</p>
+        </div>
+        <a class="btn btn-red" href="directions.html">Начать путь</a>
+      </div>
+      <hr>
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+         <span>&copy; 2026 DevPath. Все права защищены.</span>
+        <div class="d-flex flex-wrap column-gap-3 row-gap-1">
+          <a class="site-footer__link" href="index.html">Главная</a>
+          <a class="site-footer__link" href="directions.html">Направления</a>
+          <a class="site-footer__link" href="reviews.html">Отзывы</a>
+          <a class="site-footer__link" href="about.html">О проекте</a>
+          <a class="site-footer__link" href="how.html">Как это работает</a>
+        </div> 
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== КНОПКА «НАВЕРХ» ========== -->
+  <a class="btn rounded-circle shadow to-top position-fixed bottom-0 end-0 m-4" href="#top" aria-label="Наверх">UP</a>
+
+  <!-- Bootstrap JS: нужен для меню на телефоне и раскрытия глав -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Свой JS: плавное появление разделов и счётчики -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>
