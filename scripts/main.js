@@ -194,3 +194,94 @@ function startPhrases(element) {
 if (!reduceMotion) {
   document.querySelectorAll('[data-phrases]').forEach(startPhrases);
 }
+
+
+
+// =========================================
+// 5. ДОБАВЛЕНИЕ ОТЗЫВА (страница «Отзывы»)
+// Отзыв из формы появляется первым в списке и сохраняется в браузере (localStorage),
+// поэтому после обновления страницы он не пропадает
+// =========================================
+
+const reviewForm = document.querySelector('#review-form');
+
+// Код ниже работает только на странице, где есть форма
+if (reviewForm) {
+  const reviewList = document.querySelector('#review-list');         // сетка с отзывами
+  const reviewTemplate = document.querySelector('#review-template'); // шаблон карточки
+  const reviewMessage = document.querySelector('#review-message');   // надпись под кнопкой
+  const reviewBubble = document.querySelector('#review-bubble');     // облачко Тьмуши
+  const storageKey = 'devpath-reviews';                              // имя ячейки в localStorage
+
+  // Читает сохранённые отзывы. Если хранилище недоступно — возвращает пустой список
+  function loadReviews() {
+    try {
+      return JSON.parse(localStorage.getItem(storageKey)) || [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  // Сохраняет список отзывов
+  function saveReviews(reviews) {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(reviews));
+    } catch (error) {
+      // Хранилище недоступно (например, приватный режим) — отзыв просто не сохранится
+    }
+  }
+
+  // Делает карточку отзыва из шаблона и ставит её первой в списке
+  function showReview(review) {
+    const card = reviewTemplate.content.firstElementChild.cloneNode(true);
+
+    // textContent, а не innerHTML: всё, что написали в форме, вставляется как обычный текст
+    card.querySelector('[data-field="text"]').textContent = review.text;
+    card.querySelector('[data-field="letter"]').textContent = review.name[0].toUpperCase();
+    card.querySelector('[data-field="name"]').textContent = review.name;
+    card.querySelector('[data-field="direction"]').textContent = 'Направление: ' + review.direction;
+
+    // Кнопка «Удалить» убирает отзыв со страницы и из хранилища
+    card.querySelector('[data-field="delete"]').addEventListener('click', function () {
+      const reviews = loadReviews().filter(function (item) {
+        return item.id !== review.id;
+      });
+      saveReviews(reviews);
+      card.remove();
+    });
+
+    reviewList.prepend(card);
+    return card;
+  }
+
+  // При открытии страницы показываем сохранённые отзывы.
+  // Идём от старых к новым: каждый следующий встаёт первым, и самый новый оказывается вверху
+  loadReviews().reverse().forEach(showReview);
+
+  reviewForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // не перезагружаем страницу
+
+    const name = document.querySelector('#review-name').value.trim();
+    const direction = document.querySelector('#review-direction').value;
+    const text = document.querySelector('#review-text').value.trim();
+
+    // Поля из одних пробелов браузер считает заполненными — проверяем сами
+    if (name === '' || text === '') {
+      reviewMessage.textContent = 'Заполни имя и текст отзыва.';
+      return;
+    }
+
+    const review = { id: Date.now(), name: name, direction: direction, text: text };
+
+    const reviews = loadReviews();
+    reviews.unshift(review); // новый отзыв — в начало списка
+    saveReviews(reviews);
+
+    const card = showReview(review);
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' }); // показываем, где он появился
+
+    reviewForm.reset();
+    reviewMessage.textContent = 'Спасибо! Отзыв добавлен первым в списке.';
+    reviewBubble.textContent = 'Ура, спасибо за твою историю!';
+  });
+}

@@ -100,7 +100,8 @@
       <h2 class="fw-bold mt-3 mb-2">Что пишут о DevPath</h2>
       <p class="directions__text mb-4">Как сайт помог понять направление и выбрать первый язык.</p>
 
-      <div class="row g-4">
+      <!-- id="review-list": сюда JS добавляет новые отзывы из формы -->
+      <div class="row g-4" id="review-list">
         <div class="col-12 col-md-6 col-xl-4">
           <div class="make-card d-flex flex-column">
             <p class="intro-title mb-2"><span class="hero__accent">"</span></p>
@@ -193,6 +194,24 @@
       </div>
     </section>
 
+    <!-- Шаблон карточки для новых отзывов: JS копирует его и подставляет текст из формы -->
+    <template id="review-template">
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="make-card d-flex flex-column">
+          <p class="intro-title mb-2"><span class="hero__accent">"</span></p>
+          <p class="mb-4 text-break" data-field="text"></p>
+          <div class="d-flex align-items-center gap-3 mt-auto">
+            <div class="step__number flex-shrink-0" data-field="letter"></div>
+            <div class="text-break">
+              <p class="fw-bold mb-0" data-field="name"></p>
+              <p class="make-text small" data-field="direction"></p>
+            </div>
+            <button class="btn btn-sm btn-outline-pink ms-auto" type="button" data-field="delete">Удалить</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
     <!-- ========== ИСТОРИИ: БЫЛО → СТАЛО ========== -->
     <section id="stories" class="container py-5">
       <span class="section-label">Истории</span>
@@ -234,18 +253,57 @@
       </div>
     </section>
 
-    <!-- ========== ТВОЙ ОТЗЫВ: АДА ЗОВЁТ НАЧАТЬ ========== -->
-    <section class="container py-5">
-      <div class="d-flex flex-wrap align-items-center justify-content-between gap-4">
-        <div>
+    <!-- ========== ДОБАВИТЬ ОТЗЫВ: ФОРМА (код в scripts/main.js) ========== -->
+    <section id="add-review" class="container py-5">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-8">
           <span class="section-label">Твоя очередь</span>
-          <h2 class="fw-bold mt-3 mb-2">Здесь может быть твой отзыв</h2>
-          <p class="directions__text mb-4">Выбери направление, сделай первый шаг — и расскажи, что получилось.</p>
-          <a class="btn btn-red btn-lg" href="directions.html">Выбрать направление</a>
+          <h2 class="fw-bold mt-3 mb-2">Оставь свой отзыв</h2>
+          <p class="directions__text mb-4">Расскажи, какое направление выбрал и что уже получилось. Отзыв сразу появится первым в списке.</p>
+
+          <form class="review-form" id="review-form">
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="review-name">Имя</label>
+                <input class="form-control" id="review-name" type="text" maxlength="30" placeholder="Например, Саша" required>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="review-direction">Направление</label>
+                <select class="form-select" id="review-direction" required>
+                  <option value="" selected disabled>Выбери направление</option>
+                  <option>Разработка игр</option>
+                  <option>Фронтенд</option>
+                  <option>Бэкенд</option>
+                  <option>ИИ и машинное обучение</option>
+                  <option>Мобильная разработка</option>
+                  <option>Анализ данных</option>
+                  <option>Кибербезопасность</option>
+                  <option>DevOps</option>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label" for="review-text">Отзыв</label>
+                <textarea class="form-control" id="review-text" rows="4" minlength="20" maxlength="300" placeholder="Что помогло выбрать и что уже получилось" required></textarea>
+              </div>
+
+              <div class="col-12 d-flex flex-wrap align-items-center gap-3">
+                <button class="btn btn-red btn-lg" type="submit">Добавить отзыв</button>
+                <span class="directions__text" id="review-message"></span>
+              </div>
+            </div>
+          </form>
+
+          <p class="make-text small mt-3">Пока отзывы сохраняются только в твоём браузере: другие посетители их не увидят.</p>
         </div>
-        <div class="d-flex align-items-center gap-3">
-          <div class="bubble bubble--right">Буду ждать твою историю!</div>
-          <img class="mascot mascot--small" src="images/ada.png" alt="">
+
+        <!-- Тьмуша с репликой: после отправки отзыва JS меняет её текст -->
+        <div class="col-12 col-lg-4 text-center">
+          <div class="bubble mb-4" id="review-bubble">Буду ждать твою историю!</div>
+          <div>
+            <img class="mascot mascot--small" src="images/ada.png" alt="">
+          </div>
         </div>
       </div>
     </section>
